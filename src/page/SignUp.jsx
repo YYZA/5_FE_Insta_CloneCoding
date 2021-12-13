@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react'
 
 const SiginUp = () => {
-  return null;
-};
+  return null
+}
 
-export default SiginUp;
+export default SiginUp

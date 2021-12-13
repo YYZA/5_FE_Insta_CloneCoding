@@ -1,0 +1,30 @@
+.background {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.05);
+  z-index: 4;
+}
+
+.container {
+  position: relative;
+  max-width: 650px;
+  min-width: 400px;
+  width: auto;
+  height: calc(100vh - 60px);
+  margin: 0 auto;
+  margin-top: 5%;
+  overflow-y: hidden;
+  background-color: white;
+}
+
+.footer {
+  top: 5%;
+  left: 40%;
+  max-width: 10%;
+  width: 10%;
+  max-height: 100vh;
+  background-color: aliceblue;
+}

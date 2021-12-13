@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react'
 
 const UserProfile = () => {
-  return null;
-};
+  return null
+}
 
-export default UserProfile;
+export default UserProfile

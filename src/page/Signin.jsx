@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react'
 
 const Siginin = () => {
-  return <React.Fragment>asdsad</React.Fragment>;
-};
+  return <React.Fragment>asdsad</React.Fragment>
+}
 
-export default Siginin;
+export default Siginin
