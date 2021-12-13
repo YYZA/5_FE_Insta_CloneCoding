@@ -1,0 +1,34 @@
+.FooterLayout {
+  border: 1px solid black;
+  max-width: 20%;
+  width: 20%;
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  position: sticky;
+  right: 13%;
+}
+
+.FooterContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.NameTag {
+  display: flex;
+  align-items: center;
+  margin-left: 5px;
+}
+
+.FollowButton {
+  display: flex;
+  margin-right: 10px;
+  font-size: 15px;
+  color: rgb(0, 187, 255);
+}
+
+.FollowButton:hover {
+  cursor: pointer;
+}

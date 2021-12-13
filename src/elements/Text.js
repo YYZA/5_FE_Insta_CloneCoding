@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Text = (props) => {
-  const { children, color, margin, size, weight, align } = props
+  const { children, color, margin, size, weight, align, fontWeight } = props
 
   const styles = {
     color: color,
@@ -10,6 +10,7 @@ const Text = (props) => {
     size: size,
     weight: weight,
     align: align,
+    fontWeight: fontWeight,
   }
   return (
     <React.Fragment>
@@ -25,6 +26,7 @@ Text.defaultProps = {
   size: false,
   weight: false,
   align: 'false',
+  fontWeight: false,
 }
 
 const P = styled.p`
@@ -33,6 +35,7 @@ const P = styled.p`
   ${(props) => (props.margin ? `margin: ${props.margin};` : '')}
   ${(props) => (props.weight ? `font-weight: ${props.weight};` : '')}
   ${(props) => (props.align ? `text-align: ${props.align};` : '')}
+  ${(props) => (props.fontWeight ? `font-weight: ${props.fontWeight};` : '')}
 `
 
 export default Text
