@@ -5,6 +5,7 @@ import SignIn from "../page/Signin";
 import SignUp from "../page/SignUp";
 import UserProfile from "../page/UserProfile";
 import { history } from "../redux/configureStore";
+import styled from "styled-components";
 
 function App() {
   return (
