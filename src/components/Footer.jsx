@@ -1,7 +1,9 @@
 import React from 'react'
+import '../css/Footer.css'
 import { Grid, Image, Text } from '../elements'
 import FaceIcon from '@mui/icons-material/Face'
 import GitHubIcon from '@mui/icons-material/GitHub'
+import UserNameTag from './UserNameTag'
 
 const Footer = () => {
   const members = [
@@ -45,44 +47,27 @@ const Footer = () => {
 
   return (
     <>
-      <Grid maxWidth="300px" minWidth="150px" height="450px" padding="10px 0 0 0" margin="0">
-        <Grid>
-          {members.map((member) => {
-            return (
-              <Grid is_flex>
-                <Grid is_flex margin="5px 15px 5px 10px">
-                  <Grid is_flex width="auto">
-                    <Image src={member.src} shape="circle" size="36"></Image>
-                    <Text color="#333" size="14px" margin="0">
-                      {member.nickname}
-                    </Text>
-                  </Grid>
-                  <Grid is_flex width="auto">
-                    <FaceIcon
-                      style={{ margin: '0 8px', color: '#6e6e6e', cursor: 'pointer' }}
-                      onClick={() => {
-                        window.open(`${member.blog}`)
-                      }}
-                    ></FaceIcon>
-                    <GitHubIcon
-                      style={{ margin: '0 0 0 8px', color: '#6e6e6e', cursor: 'pointer' }}
-                      onClick={() => {
-                        window.open(`${member.github}`)
-                      }}
-                    ></GitHubIcon>
-                  </Grid>
-                </Grid>
-              </Grid>
-            )
-          })}
-        </Grid>
-
-        <Grid margin="20px 0 0 20px" width="auto">
-          <Text color="#6e6e6e" size="10px">
-            © 2021 HANGHAELOG FROM TEAM 2
+      <div className="FooterLayout">
+        {members.map((member) => {
+          return (
+            <div className="FooterContainer">
+              <div className="NameTag">
+                <Image src={member.src} shape="circle" size="36"></Image>
+                <Text color="#333" size="14px" margin="0">
+                  {member.nickname}
+                </Text>
+              </div>
+              <div className="FollowButton">팔로우</div>
+            </div>
+          )
+        })}
+        <div>
+          <Text color="#6e6e6e" size="10px" margin="20px 10px 10px 10px">
+            소개·도움말·홍보 센터·API·채용 정보·개인정보처리방침·약관·위치·인기 계정·해시태그·언어 <br />
+            <br /> © 2021 INSTAGRAM FROM 2조
           </Text>
-        </Grid>
-      </Grid>
+        </div>
+      </div>
     </>
   )
 }

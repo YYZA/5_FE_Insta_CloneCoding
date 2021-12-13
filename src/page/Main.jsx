@@ -7,16 +7,15 @@ import { Grid, Image, Text } from '../elements'
 const Main = () => {
   return (
     <>
-      <div className="background">
-        <div className="container">
+      <div className="Background">
+        {/* <Footer></Footer> */}
+        <div className="Layout">
+          <PostCard></PostCard>
+          <PostCard></PostCard>
+          <PostCard></PostCard>
+          <PostCard></PostCard>
           <PostCard></PostCard>
         </div>
-        <Grid>
-          <Footer></Footer>
-        </Grid>
-        <Grid>
-          <Image src="https://www.hidomin.com/news/photo/202105/453232_224470_4025.jpg" />
-        </Grid>
       </div>
     </>
   )

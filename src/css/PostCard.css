@@ -1,0 +1,109 @@
+/* 포스트 박스 하나의 크기 */
+.Container {
+  position: relative;
+  max-width: 600px;
+  min-width: 400px;
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 5%;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  background-color: white;
+  border: 1px solid hsla(0, 0%, 50%, 0.4);
+  border-radius: 5px;
+}
+/* 포스트 박스 하나의 크기 */
+
+.MoreButton {
+  margin: 10px;
+  font-size: 2rem;
+}
+
+.MoreButton:hover {
+  cursor: pointer;
+}
+
+/* 포스트 좋아요, 댓글, 공유 버튼 */
+.LikeButton {
+  font-size: 3em;
+  margin: 10px 10px 10px 15px;
+}
+.LikeButton:hover {
+  cursor: pointer;
+}
+
+.CommentButton {
+  font-size: 3em;
+  margin: 10px 10px 10px 0px;
+}
+.CommentButton:hover {
+  cursor: pointer;
+}
+
+.ShareButton {
+  font-size: 3em;
+  margin: 10px 10px 12px 0px;
+  transform: rotate(10deg);
+}
+.ShareButton:hover {
+  cursor: pointer;
+}
+/* 포스트 좋아요, 댓글, 공유 버튼 */
+
+/* 해당 유저의 이름과 포스트 내용 */
+.ContentSection {
+  display: flex;
+  align-content: center;
+  justify-content: flex-start;
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+.DescriptioncUserName {
+  font-weight: bold;
+  margin: 5px 20px 0px 20px;
+  font-size: 18px;
+}
+
+.DescriptionContent {
+  font-weight: bold;
+  margin: 0px 20px 10px 0;
+  font-size: 18px;
+}
+/* 해당 유저의 이름과 포스트 내용 */
+
+/* 해당 포스트에 달린 댓글과 댓글 작성자 이름 */
+.CommentCnt {
+  margin: 0 0 5px 15px;
+  font-size: 0.9rem;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.CommentCnt:hover {
+  cursor: pointer;
+}
+
+.CommentSection {
+  display: flex;
+  align-content: center;
+  justify-content: flex-start;
+}
+
+.CommentUserName {
+  font-weight: bold;
+  margin: 0px 20px 0px 20px;
+}
+
+.CommentContent {
+  margin-bottom: 5px;
+}
+/* 해당 포스트에 달린 댓글과 댓글 작성자 이름 */
+
+/* 해당 포스트의 작성 시간 */
+.CreatedAt {
+  margin: 10px 10px 20px 15px;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 0.8rem;
+}
+/* 해당 포스트의 작성 시간 */
