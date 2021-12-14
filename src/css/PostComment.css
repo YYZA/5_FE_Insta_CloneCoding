@@ -5,6 +5,7 @@
   width: auto;
   height: auto;
   margin: 0 auto;
+  margin-top: 1rem;
   overflow-y: hidden;
   overflow-x: hidden;
   background-color: white;
@@ -56,20 +57,61 @@
 
 .PostCommentList {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-content: center;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.UserComment {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  margin: 2.5px 10px 0 0;
+}
+
+.CommentFooter {
+  position: sticky;
+  max-width: 600px;
+  min-width: 300px;
+  margin: 0 auto;
+  width: auto;
+  height: auto;
+  bottom: 0rem;
+  left: 15.8rem;
+  justify-content: space-between;
+  align-content: center;
 }
 
 .AddCommentSection {
   display: flex;
   justify-content: space-between;
   align-content: center;
+  margin: 0;
+  padding: 20px 0 0 0;
+  position: sticky;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .CommentInput {
-  width: auto;
+  width: 100%;
+  border: 0.5px solid rgba(0, 0, 0, 0.4);
+  border-radius: 30px;
+  padding: 0 50px 0 15px;
+  margin: 5px 15px 5px 5px;
+  flex-wrap: wrap;
+  font-size: 1rem;
 }
 
 .AddCommentButton {
+  position: absolute;
+  bottom: 1.05rem;
+  right: 1.7rem;
+  border: none;
+  background: none;
+  color: rgb(0, 133, 174);
+  font-size: 1rem;
+}
+.AddCommentButton:hover {
+  cursor: pointer;
 }

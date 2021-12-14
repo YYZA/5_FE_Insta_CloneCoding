@@ -31,59 +31,62 @@ const PostComment = () => {
           </Text>
           <hr className="Contour" />
           <div className="PostCommentList">
-            <UserNameTag></UserNameTag>
-            <Text margin="16px 30px 0 10px">내용입니다</Text>
+            <div className="UserComment">
+              <UserNameTag />
+              <Text margin="16px 0 0 10px" width="auto">
+                댓글입니다
+              </Text>
+            </div>
+            <Text margin="19px 20px 0 0" color="gray" size="13px">
+              1분 전
+            </Text>
           </div>
           <div className="PostCommentList">
-            <UserNameTag></UserNameTag>
-            <Text margin="16px 30px 0 10px">댓글입니다</Text>
+            <div className="UserComment">
+              <UserNameTag />
+              <Text margin="16px 0 0 10px" width="auto">
+                댓글이에요
+              </Text>
+            </div>
+            <Text margin="19px 20px 0 0" color="gray" size="13px">
+              1분 전
+            </Text>
           </div>
           <div className="PostCommentList">
-            <UserNameTag></UserNameTag>
-            <Text margin="16px 30px 0 10px">내용입니다ㅁㄴㅇㄹㅁㄴㅇㄹㄴㅁㅇㄹ</Text>
+            <div className="UserComment">
+              <UserNameTag />
+              <Text margin="16px 0 0 10px" width="auto">
+                댓글이야
+              </Text>
+            </div>
+            <Text margin="19px 20px 0 0" color="gray" size="13px">
+              1분 전
+            </Text>
           </div>
           <div className="PostCommentList">
-            <UserNameTag></UserNameTag>
-            <Text margin="16px 30px 0 10px">내용입니다</Text>
+            <div className="UserComment">
+              <UserNameTag />
+              <Text margin="16px 0 0 10px" width="auto">
+                댓글데스
+              </Text>
+            </div>
+            <Text margin="19px 20px 0 0" color="gray" size="13px">
+              1분 전
+            </Text>
           </div>
           <div className="PostCommentList">
-            <UserNameTag></UserNameTag>
-            <Text margin="16px 30px 0 10px">내용입니다</Text>
+            <div className="UserComment">
+              <UserNameTag />
+              <Text margin="16px 0px 0 10px">is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글</Text>
+            </div>
+            <Text margin="19px 20px 0 25px" color="gray" size="13px">
+              1분 전
+            </Text>
           </div>
-          <div className="PostCommentList">
-            <UserNameTag></UserNameTag>
-            <Text margin="16px 30px 0 10px">내용입니다ㅁㄴㅇㄹㅁㄴㅇㄹㅁㄴㅇㄹㅁㄴㅇㄹㅁㄴㅇㄹㅁㄴㅇㄹ먀뇨ㅗㅇ리ㅏㅁ뉴ㅜㅇ래ㅏㅁ노애라ㅗ</Text>
-          </div>
-          <div className="PostCommentList">
-            <UserNameTag></UserNameTag>
-            <Text margin="16px 30px 0 10px">내용입니다ㅁㄴㅇㄹㄴㅇㄹ먀뇨ㅗㅇ리ㅏㅁ뉴ㅜㅇ래ㅏㅁ노애라ㅗ</Text>
-          </div>
-          <div className="PostCommentList">
-            <UserNameTag></UserNameTag>
-            <Text margin="16px 30px 0 10px">내용입니다ㅁㄴㅇㄹㅁㄴㅇㄹㅁㄴㅇㄹㅁㄴㅇㄹㅁㄴㅇㄹㅁㄴㅇㄹ먀뇨ㅗㅇ리ㅏㅁ뉴ㅜㅇ래ㅏㅁ노애라ㅗ</Text>
-          </div>
-          <div className="PostCommentList">
-            <UserNameTag></UserNameTag>
-            <Text margin="16px 30px 0 10px">내용입니다ㅁㄴㄴㅇㄹㅁㄴㅇㄹㅁㄴㅇㄹ먀뇨ㅗㅇ리ㅏㅁ뉴ㅜㅇ래ㅏㅁ노애라ㅗ</Text>
-          </div>
-          <div className="PostCommentList">
-            <UserNameTag></UserNameTag>
-            <Text margin="16px 30px 0 10px">내용입니다ㅁㄴㅇㄹㅁㄴㅇㄹㅁㅏㅁ노애라ㅗ</Text>
-          </div>
-          <div className="PostCommentList">
-            <UserNameTag></UserNameTag>
-            <Text margin="16px 30px 0 10px">내용입니다ㅁㄴㅇㄹ먀뇨ㅗㅇ리ㅏㅁ뉴ㅜㅇ래ㅏㅁ노애라ㅗ</Text>
-          </div>
-          <div className="PostCommentList">
-            <UserNameTag></UserNameTag>
-            <Text margin="16px 30px 0 10px">내용입니다ㅁㄴㅇㄹㅁㄴㅁ뉴ㅜㅇ래ㅏㅁ노애라ㅗ</Text>
-          </div>
-          <div className="PostCommentList">
-            <UserNameTag></UserNameTag>
-            <Text margin="16px 30px 0 10px">내용입니다ㅁㄴㅇㄹㅁㄴㅇㅗㅇ리ㅏㅁ뉴ㅜㅇ래ㅏㅁ노애라ㅗ</Text>
-          </div>
+        </div>
+        <div className="CommentFooter">
           <div className="AddCommentSection">
-            <Image shape="circle"></Image>
+            <Image shape="circle" margin="10px 10px 0 0"></Image>
             <input className="CommentInput"></input>
             <button className="AddCommentButton">게시</button>
           </div>
