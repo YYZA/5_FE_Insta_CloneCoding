@@ -22,14 +22,24 @@
 }
 
 .GoBackButton {
-  margin: 0;
-  font-size: 50px;
+  margin: 0px 0 -5px 0;
+  font-size: 3rem;
+}
+.GoBackButton:hover {
+  cursor: pointer;
 }
 
-.CommentHeaderSendButton {
+/* .CommentHeaderSendButton {
   font-size: 40px;
   transform: rotate(10deg);
   margin: 5px 10px 0 0;
+} */
+
+.CommentHeaderSendButton2 {
+  margin: 4px 5px 0 0;
+}
+.CommentHeaderSendButton2:hover {
+  cursor: pointer;
 }
 /* 코멘트 페이지 헤더 */
 
@@ -40,8 +50,7 @@
 }
 
 .Contour {
-  size: 0.5px;
-  color: rgba(0, 0, 0, 0.1);
+  border: 0.5px solid rgba(0, 0, 0, 0.1);
   width: 100%;
 }
 
@@ -54,10 +63,13 @@
 
 .AddCommentSection {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-content: center;
 }
 
+.CommentInput {
+  width: auto;
+}
+
 .AddCommentButton {
-  display: ;
 }
