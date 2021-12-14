@@ -11,16 +11,14 @@ import { history } from '../redux/configureStore'
 
 function App() {
   return (
-    <div className="Background">
-      <ConnectedRouter history={history}>
-        <Route exact path="/" component={SignIn} />
-        <Route exact path="/signup" component={SignUp} />
-        <Route exact path="/profile" component={UserProfile} />
-        <Route exact path="/main" component={Main} />
-        <Route exact path="/PostComment" component={PostComment} />
-        <Route exact path="/PostAdd" component={PostAdd} />
-      </ConnectedRouter>
-    </div>
+    <ConnectedRouter history={history}>
+      <Route exact path="/" component={SignIn} />
+      <Route exact path="/signup" component={SignUp} />
+      <Route exact path="/profile" component={UserProfile} />
+      <Route exact path="/main" component={Main} />
+      <Route exact path="/postComment" component={PostComment} />
+      <Route exact path="/postAdd" component={PostAdd} />
+    </ConnectedRouter>
   )
 }
 

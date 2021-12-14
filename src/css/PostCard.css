@@ -6,7 +6,7 @@
   width: auto;
   height: auto;
   margin: 0 auto;
-  margin-top: 5%;
+  margin-top: 2%;
   overflow-y: hidden;
   overflow-x: hidden;
   background-color: white;
@@ -20,7 +20,7 @@
 }
 
 .MoreButton {
-  margin: 10px;
+  margin: 0 1rem 0 0;
   font-size: 2rem;
 }
 

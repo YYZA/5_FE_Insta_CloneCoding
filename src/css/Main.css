@@ -4,9 +4,76 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: rgba(0, 0, 0, 0.02);
   z-index: 4;
   overflow-y: auto;
+}
+
+.MainHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-content: center;
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: white;
+  border: 0.5px solid hsla(0, 0%, 50%, 0.4);
+  width: 100vw;
+  height: 6.5%;
+  z-index: 10;
+}
+
+.HeaderSection {
+  display: flex;
+  justify-content: space-between;
+  max-width: 600px;
+  min-width: 600px;
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+}
+
+.InstagramLogo {
+  margin: 0.7rem 0 0 0;
+  font-size: 1.6rem;
+}
+
+.HeaderSearchBar {
+  margin: 0.7rem 2rem 0.7rem 6rem;
+  padding: 0 2rem 0 0.7rem;
+  width: 16rem;
+  border: none;
+  border-radius: 0.7rem;
+  background-color: rgba(172, 172, 172, 0.2);
+}
+.HeaderSearchBar:focus {
+  outline: none;
+}
+
+.PostAddButton {
+  margin: 0.9rem 0.4rem 0 0;
+  font-size: 1.8rem;
+}
+.PostAddButton:hover {
+  cursor: pointer;
+}
+
+.HeaderShareButton {
+  margin: 0.7rem 0.4rem 0 0;
+  width: auto;
+  height: auto;
+}
+.HeaderShareButton:hover {
+  cursor: pointer;
+}
+
+.UserPageButton {
+  margin: 0.9rem 1rem 0 0;
+  font-size: 1.8rem;
+}
+.UserPageButton:hover {
+  cursor: pointer;
 }
 
 .Layout {
