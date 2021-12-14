@@ -15,6 +15,10 @@
 }
 /* 포스트 박스 하나의 크기 */
 
+.UserNameTagButton:hover {
+  cursor: pointer;
+}
+
 .MoreButton {
   margin: 10px;
   font-size: 2rem;
@@ -25,28 +29,52 @@
 }
 
 /* 포스트 좋아요, 댓글, 공유 버튼 */
+.SnsButtons {
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+}
+
 .LikeButton {
-  font-size: 3em;
-  margin: 10px 10px 10px 15px;
+  font-size: 2em;
+  margin: 11px 7px 10px 20px;
 }
 .LikeButton:hover {
   cursor: pointer;
 }
 
-.CommentButton {
+/* .CommentButton {
   font-size: 3em;
   margin: 10px 10px 10px 0px;
 }
 .CommentButton:hover {
   cursor: pointer;
+} */
+
+.CommentButton2 {
+  margin: 6px 3px 0 0;
+  width: auto;
+  height: auto;
+}
+.CommentButton2:hover {
+  cursor: pointer;
 }
 
-.ShareButton {
+/* .ShareButton {
   font-size: 3em;
   margin: 10px 10px 12px 0px;
   transform: rotate(10deg);
 }
 .ShareButton:hover {
+  cursor: pointer;
+} */
+
+.ShareButton2 {
+  margin: 5px 0 0 0;
+  width: auto;
+  height: auto;
+}
+.ShareButton2:hover {
   cursor: pointer;
 }
 /* 포스트 좋아요, 댓글, 공유 버튼 */
