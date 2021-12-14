@@ -5,10 +5,12 @@
   width: auto;
   height: auto;
   margin: 0 auto;
+  margin-top: 1rem;
   overflow-y: hidden;
   overflow-x: hidden;
   background-color: white;
-  border: 1px solid hsla(0, 0%, 50%, 0.4);
+  border: 0.5px solid hsla(0, 0%, 50%, 0.4);
+  border-bottom: none;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -22,14 +24,24 @@
 }
 
 .GoBackButton {
-  margin: 0;
-  font-size: 50px;
+  margin: 0px 0 -5px 0;
+  font-size: 3rem;
+}
+.GoBackButton:hover {
+  cursor: pointer;
 }
 
-.CommentHeaderSendButton {
+/* .CommentHeaderSendButton {
   font-size: 40px;
   transform: rotate(10deg);
   margin: 5px 10px 0 0;
+} */
+
+.CommentHeaderSendButton2 {
+  margin: 4px 5px 0 0;
+}
+.CommentHeaderSendButton2:hover {
+  cursor: pointer;
 }
 /* 코멘트 페이지 헤더 */
 
@@ -40,24 +52,79 @@
 }
 
 .Contour {
-  size: 0.5px;
-  color: rgba(0, 0, 0, 0.1);
+  border: 0.5px solid rgba(0, 0, 0, 0.1);
   width: 100%;
 }
 
 .PostCommentList {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-content: center;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.UserComment {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  margin: 2.5px 10px 0 0;
+}
+
+.CommnetCreatedAt {
+  margin: 22px 20px 0 0px;
+  font-size: 13px;
+  width: auto;
+  color: gray;
+  white-space: nowrap;
+}
+
+.CommentFooter {
+  position: sticky;
+  max-width: 600px;
+  min-width: 300px;
+  margin: 0 auto;
+  width: auto;
+  height: auto;
+  bottom: 0rem;
+  left: 15.7rem;
+  justify-content: space-between;
+  align-content: center;
+  border: 0.5px solid hsla(0, 0%, 50%, 0.4);
 }
 
 .AddCommentSection {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-content: center;
+  margin: 0;
+  padding: 20px 0 0 0;
+  position: sticky;
+  background: white;
+}
+
+.CommentInput {
+  width: 100%;
+  border: 0.5px solid rgba(0, 0, 0, 0.2);
+  border-radius: 30px;
+  padding: 0 50px 0 15px;
+  margin: 5px 15px 5px 5px;
+  flex-wrap: wrap;
+  font-size: 1rem;
+}
+.CommentInput:focus {
+  outline: none;
 }
 
 .AddCommentButton {
-  display: ;
+  position: absolute;
+  bottom: 1.05rem;
+  right: 1.7rem;
+  border: none;
+  background: none;
+  color: rgb(0, 133, 174);
+  font-size: 1rem;
+  font-weight: bold;
+}
+.AddCommentButton:hover {
+  cursor: pointer;
 }
