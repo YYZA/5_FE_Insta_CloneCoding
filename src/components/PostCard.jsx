@@ -40,10 +40,10 @@ const PostCard = () => {
         </div>
         <div className="CommentSection">
           <div className="CommentUserName">dlgkstoa</div>
-          <div className="CommentContent">ㅇㅏㅁ야럼이라ㅡ</div>
+          <div className="CommentContent">팬아저</div>
         </div>
         <div className="CommentSection">
-          <div className="CommentUserName">팬아저</div>
+          <div className="CommentUserName">stuffed_cow</div>
           <div className="CommentContent">우윳빛깔 이지은</div>
         </div>
         <div className="CreatedAt">31분 전</div>
