@@ -52,7 +52,7 @@
 }
 
 .Contour {
-  border: 0.5px solid rgba(0, 0, 0, 0.1);
+  border: 0.1px solid rgba(0, 0, 0, 0.1);
   width: 100%;
 }
 
@@ -83,13 +83,13 @@
   max-width: 600px;
   min-width: 300px;
   margin: 0 auto;
+  padding: 0 auto;
   width: auto;
-  height: auto;
-  bottom: 0rem;
+  bottom: -0.1rem;
   left: 13.5rem;
   justify-content: space-between;
   align-content: center;
-  border: 0.5px solid hsla(0, 0%, 50%, 0.4);
+  border: 0.5px solid hsla(0, 0%, 50%, 0.3);
 }
 
 .AddCommentSection {
