@@ -8,8 +8,6 @@ import '../shared/icon/Instagram_Share_Button.png'
 import MoreHorizOutlinedIcon from '@mui/icons-material/MoreHorizOutlined'
 import FavoriteBorderRoundedIcon from '@mui/icons-material/FavoriteBorderRounded'
 import FavoriteRoundedIcon from '@mui/icons-material/FavoriteRounded'
-import ModeCommentOutlinedIcon from '@mui/icons-material/ModeCommentOutlined'
-import NearMeOutlinedIcon from '@mui/icons-material/NearMeOutlined'
 
 const PostCard = () => {
   return (
@@ -27,10 +25,10 @@ const PostCard = () => {
           {/* <ModeCommentOutlinedIcon className="CommentButton" />
           <NearMeOutlinedIcon className="ShareButton" /> */}
           <div className="CommentButton2" onClick={() => history.push('/PostComment')}>
-            <Image src="/Users/sam/Desktop/React/ClonedCoding/clonecoding/src/shared/icon/Instagram_Comment_Button.png" size="40"></Image>
+            <Image src="https://o.remove.bg/downloads/33ff2c6e-9723-4346-8d9e-d0bd6ab84c73/insta_icons_2_generated__1_-removebg-preview-removebg-preview.png" size="40"></Image>
           </div>
           <div className="ShareButton2">
-            <Image src="/Users/sam/Desktop/React/ClonedCoding/clonecoding/src/shared/icon/Instagram_Share_Button.png" size="40"></Image>
+            <Image src="https://o.remove.bg/downloads/0e6a7f30-dd91-4e1d-8f56-79344140db56/insta_icons_2_generated__2_-removebg-preview-removebg-preview.png" size="40"></Image>
           </div>
         </div>
         <div className="ContentSection">

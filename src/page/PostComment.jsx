@@ -4,7 +4,6 @@ import UserNameTag from '../components/UserNameTag'
 import { Grid, Image, Text } from '../elements'
 import { history } from '../redux/configureStore'
 import NavigateBeforeOutlinedIcon from '@mui/icons-material/NavigateBeforeOutlined'
-import NearMeOutlinedIcon from '@mui/icons-material/NearMeOutlined'
 
 const PostComment = () => {
   return (
@@ -17,7 +16,7 @@ const PostComment = () => {
               댓글
             </Text>
             <div className="CommentHeaderSendButton2">
-              <Image src="https://o.remove.bg/downloads/4a726871-ff3f-4b10-9c73-54b12375a399/insta_icons_2_generated__2_-removebg-preview-removebg-preview.png" size="40"></Image>
+              <Image src="https://o.remove.bg/downloads/0e6a7f30-dd91-4e1d-8f56-79344140db56/insta_icons_2_generated__2_-removebg-preview-removebg-preview.png" size="40"></Image>
             </div>
             {/* <NearMeOutlinedIcon className="CommentHeaderSendButton" /> */}
           </div>
