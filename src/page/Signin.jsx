@@ -1,9 +1,38 @@
 import React from "react";
 import styled from "styled-components";
+import axios from "axios";
 import Grid from "../elements/Grid";
+import { useDispatch } from "react-redux";
+import { useForm } from "react-hook-form";
 import { history } from "../redux/configureStore";
+import { userActions } from "../redux/modules/user";
 
-const Siginin = () => {
+const Siginin = (props) => {
+  const dispatch = useDispatch();
+  const { register, handleSubmit } = useForm();
+
+  const onSubmit = async (data) => {
+    console.log(data);
+    await axios
+      .post(
+        "https://a2efb73a-f81e-4000-821c-301da28a914a.mock.pstmn.io/api/userlist/login",
+        {
+          userId: data.email,
+          password: data.password,
+        }
+      )
+      .then((res) => {
+        document.cookie = "x_auth" + "=" + res.headers.authorization;
+        dispatch(
+          userActions.setUser({
+            username: data.email,
+          })
+        );
+      })
+      .catch((err) => {
+        alert("아이디 혹은 비밀번호를 확인하세요.");
+      });
+  };
   return (
     <div
       style={{
@@ -19,16 +48,26 @@ const Siginin = () => {
     >
       <Container>
         <Logo>Instartgram</Logo>
-        <Input type="text" placeholder="이메일을 입력해주세요"></Input>
-        <Input type="text" placeholder="비밀번호를 입력해주세요"></Input>
-        <LoginBtn>로그인</LoginBtn>
-        <LoginBtn
-          onClick={() => {
-            history.push("/signup");
-          }}
-        >
-          회원가입
-        </LoginBtn>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <Input
+            type="text"
+            placeholder="이메일을 입력해주세요"
+            {...register("email")}
+          ></Input>
+          <Input
+            type="text"
+            placeholder="비밀번호를 입력해주세요"
+            {...register("password")}
+          ></Input>
+          <LoginBtn>로그인</LoginBtn>
+          <LoginBtn
+            onClick={() => {
+              history.push("/signup");
+            }}
+          >
+            회원가입
+          </LoginBtn>
+        </form>
       </Container>
     </div>
   );
