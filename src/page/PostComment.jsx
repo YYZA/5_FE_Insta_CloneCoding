@@ -33,55 +33,114 @@ const PostComment = () => {
           <div className="PostCommentList">
             <div className="UserComment">
               <UserNameTag />
-              <Text margin="16px 0 0 10px" width="auto">
-                댓글입니다
-              </Text>
+              <Text margin="16px 10px 0 10px">is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글</Text>
             </div>
-            <Text margin="19px 20px 0 0" color="gray" size="13px">
-              1분 전
-            </Text>
+            <div className="CommnetCreatedAt">3시간 전</div>
           </div>
           <div className="PostCommentList">
             <div className="UserComment">
               <UserNameTag />
-              <Text margin="16px 0 0 10px" width="auto">
-                댓글이에요
-              </Text>
+              <Text margin="16px 10px 0 10px">is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글</Text>
             </div>
-            <Text margin="19px 20px 0 0" color="gray" size="13px">
-              1분 전
-            </Text>
+            <div className="CommnetCreatedAt">3시간 전</div>
           </div>
           <div className="PostCommentList">
             <div className="UserComment">
               <UserNameTag />
-              <Text margin="16px 0 0 10px" width="auto">
-                댓글이야
-              </Text>
+              <Text margin="16px 10px 0 10px">is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글</Text>
             </div>
-            <Text margin="19px 20px 0 0" color="gray" size="13px">
-              1분 전
-            </Text>
+            <div className="CommnetCreatedAt">3시간 전</div>
           </div>
           <div className="PostCommentList">
             <div className="UserComment">
               <UserNameTag />
-              <Text margin="16px 0 0 10px" width="auto">
-                댓글데스
-              </Text>
+              <Text margin="16px 10px 0 10px">is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글</Text>
             </div>
-            <Text margin="19px 20px 0 0" color="gray" size="13px">
-              1분 전
-            </Text>
+            <div className="CommnetCreatedAt">3시간 전</div>
           </div>
           <div className="PostCommentList">
             <div className="UserComment">
               <UserNameTag />
-              <Text margin="16px 0px 0 10px">is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글</Text>
+              <Text margin="16px 10px 0 10px">is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글</Text>
             </div>
-            <Text margin="19px 20px 0 25px" color="gray" size="13px">
-              1분 전
-            </Text>
+            <div className="CommnetCreatedAt">3시간 전</div>
+          </div>
+          <div className="PostCommentList">
+            <div className="UserComment">
+              <UserNameTag />
+              <Text margin="16px 10px 0 10px">is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글</Text>
+            </div>
+            <div className="CommnetCreatedAt">3시간 전</div>
+          </div>
+          <div className="PostCommentList">
+            <div className="UserComment">
+              <UserNameTag />
+              <Text margin="16px 10px 0 10px">is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글</Text>
+            </div>
+            <div className="CommnetCreatedAt">3시간 전</div>
+          </div>
+          <div className="PostCommentList">
+            <div className="UserComment">
+              <UserNameTag />
+              <Text margin="16px 10px 0 10px">is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글</Text>
+            </div>
+            <div className="CommnetCreatedAt">3시간 전</div>
+          </div>
+          <div className="PostCommentList">
+            <div className="UserComment">
+              <UserNameTag />
+              <Text margin="16px 10px 0 10px">is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글</Text>
+            </div>
+            <div className="CommnetCreatedAt">3시간 전</div>
+          </div>
+          <div className="PostCommentList">
+            <div className="UserComment">
+              <UserNameTag />
+              <Text margin="16px 10px 0 10px">is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글</Text>
+            </div>
+            <div className="CommnetCreatedAt">3시간 전</div>
+          </div>
+          <div className="PostCommentList">
+            <div className="UserComment">
+              <UserNameTag />
+              <Text margin="16px 10px 0 10px">is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글</Text>
+            </div>
+            <div className="CommnetCreatedAt">3시간 전</div>
+          </div>
+          <div className="PostCommentList">
+            <div className="UserComment">
+              <UserNameTag />
+              <Text margin="16px 10px 0 10px">is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글</Text>
+            </div>
+            <div className="CommnetCreatedAt">3시간 전</div>
+          </div>
+          <div className="PostCommentList">
+            <div className="UserComment">
+              <UserNameTag />
+              <Text margin="16px 10px 0 10px">is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글</Text>
+            </div>
+            <div className="CommnetCreatedAt">3시간 전</div>
+          </div>
+          <div className="PostCommentList">
+            <div className="UserComment">
+              <UserNameTag />
+              <Text margin="16px 10px 0 10px">is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글</Text>
+            </div>
+            <div className="CommnetCreatedAt">3시간 전</div>
+          </div>
+          <div className="PostCommentList">
+            <div className="UserComment">
+              <UserNameTag />
+              <Text margin="16px 10px 0 10px">is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글</Text>
+            </div>
+            <div className="CommnetCreatedAt">3시간 전</div>
+          </div>
+          <div className="PostCommentList">
+            <div className="UserComment">
+              <UserNameTag />
+              <Text margin="16px 10px 0 10px">is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글</Text>
+            </div>
+            <div className="CommnetCreatedAt">3시간 전</div>
           </div>
         </div>
         <div className="CommentFooter">

@@ -9,7 +9,8 @@
   overflow-y: hidden;
   overflow-x: hidden;
   background-color: white;
-  border: 1px solid hsla(0, 0%, 50%, 0.4);
+  border: 0.5px solid hsla(0, 0%, 50%, 0.4);
+  border-bottom: none;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -69,6 +70,14 @@
   margin: 2.5px 10px 0 0;
 }
 
+.CommnetCreatedAt {
+  margin: 22px 20px 0 0px;
+  font-size: 13px;
+  width: auto;
+  color: gray;
+  white-space: nowrap;
+}
+
 .CommentFooter {
   position: sticky;
   max-width: 600px;
@@ -77,9 +86,10 @@
   width: auto;
   height: auto;
   bottom: 0rem;
-  left: 15.8rem;
+  left: 15.7rem;
   justify-content: space-between;
   align-content: center;
+  border: 0.5px solid hsla(0, 0%, 50%, 0.4);
 }
 
 .AddCommentSection {
@@ -90,17 +100,19 @@
   padding: 20px 0 0 0;
   position: sticky;
   background: white;
-  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .CommentInput {
   width: 100%;
-  border: 0.5px solid rgba(0, 0, 0, 0.4);
+  border: 0.5px solid rgba(0, 0, 0, 0.2);
   border-radius: 30px;
   padding: 0 50px 0 15px;
   margin: 5px 15px 5px 5px;
   flex-wrap: wrap;
   font-size: 1rem;
+}
+.CommentInput:focus {
+  outline: none;
 }
 
 .AddCommentButton {
@@ -111,6 +123,7 @@
   background: none;
   color: rgb(0, 133, 174);
   font-size: 1rem;
+  font-weight: bold;
 }
 .AddCommentButton:hover {
   cursor: pointer;
