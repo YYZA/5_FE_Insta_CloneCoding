@@ -29,16 +29,16 @@
   cursor: pointer;
 }
 
-/* 포스트 좋아요, 댓글, 공유 버튼 */
-.SnsButtons {
+/* 포스트 좋아요, 댓글, 공유, 북마크 버튼 */
+.SNSButtons {
   display: flex;
   justify-content: flex-start;
   align-content: center;
 }
 
 .LikeButton {
-  font-size: 2em;
-  margin: 11px 15px 10px 20px;
+  font-size: 35px;
+  margin: 10px 15px 10px 20px;
   color: crimson;
 }
 .LikeButton:hover {
@@ -46,9 +46,8 @@
 }
 
 .PostCommentButton {
-  font-size: 2em;
-  transform: perspective(50);
-  margin: 10px 20px 10px 0px;
+  font-size: 30px;
+  margin: 0px 20px 13px 0px;
   transform: scaleX(-1);
 }
 .PostCommentButton:hover {
@@ -56,14 +55,22 @@
 }
 
 .PostShareButton {
-  font-size: 2em;
-  margin: 6px 10px 12px 0px;
-  transform: rotate(-30deg);
+  font-size: 30px;
+  margin: 0px 12px 13px 0;
+  transform: rotate(10deg);
 }
 .PostShareButton:hover {
   cursor: pointer;
 }
-/* 포스트 좋아요, 댓글, 공유 버튼 */
+
+.BookMarkButton {
+  font-size: 35px;
+  margin: 0 0 7px 390px;
+}
+.PostShareButton:hover {
+  cursor: pointer;
+}
+/* 포스트 좋아요, 댓글, 공유, 북마크 버튼 */
 
 /* 해당 유저의 이름과 포스트 내용 */
 .ContentSection {

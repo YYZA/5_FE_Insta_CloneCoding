@@ -8,8 +8,9 @@ import { history } from '../redux/configureStore'
 import MoreHorizOutlinedIcon from '@mui/icons-material/MoreHorizOutlined'
 import FavoriteBorderRoundedIcon from '@mui/icons-material/FavoriteBorderRounded'
 import FavoriteRoundedIcon from '@mui/icons-material/FavoriteRounded'
-import MapsUgcOutlinedIcon from '@mui/icons-material/MapsUgcOutlined'
-import SendOutlinedIcon from '@mui/icons-material/SendOutlined'
+import { FaRegComment } from 'react-icons/fa'
+import { FiSend } from 'react-icons/fi'
+import { BiBookmark } from 'react-icons/bi'
 import 'moment'
 import 'moment/locale/ko'
 import moment from 'moment'
@@ -48,8 +49,9 @@ const PostCard = (props) => {
         <Image size="600" src="https://www.hidomin.com/news/photo/202105/453232_224470_4025.jpg" />
         <div className="SnsButtons">
           <FavoriteRoundedIcon className="LikeButton" fontSize="5" />
-          <MapsUgcOutlinedIcon className="PostCommentButton" fontSize="5" onClick={() => history.push('/PostComment')} />
-          <SendOutlinedIcon className="PostShareButton" fontSize="5" />
+          <FaRegComment className="PostCommentButton" fontSize="5" onClick={() => history.push('/PostComment')} />
+          <FiSend className="PostShareButton" fontSize="5" />
+          <BiBookmark className="BookMarkButton" fontSize="5" />
         </div>
         <div className="ContentSection">
           <div className="DescriptioncUserName">dlwlrma</div>

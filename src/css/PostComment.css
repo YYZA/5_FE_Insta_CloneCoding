@@ -31,16 +31,12 @@
   cursor: pointer;
 }
 
-/* .CommentHeaderSendButton {
-  font-size: 40px;
+.PostHeaderSendButton {
+  margin: 10px 15px 0 0;
+  font-size: 2rem;
   transform: rotate(10deg);
-  margin: 5px 10px 0 0;
-} */
-
-.CommentHeaderSendButton2 {
-  margin: 4px 5px 0 0;
 }
-.CommentHeaderSendButton2:hover {
+.PostHeaderSendButton:hover {
   cursor: pointer;
 }
 /* 코멘트 페이지 헤더 */
@@ -82,11 +78,10 @@
   position: sticky;
   max-width: 600px;
   min-width: 300px;
-  margin: 0 auto;
-  padding: 0 auto;
-  width: auto;
-  bottom: -0.1rem;
-  left: 13.5rem;
+  margin: 0 0 0 0;
+  padding: 0 0 5px 0;
+  bottom: -0.5rem;
+  left: 12.55rem;
   justify-content: space-between;
   align-content: center;
   border: 0.5px solid hsla(0, 0%, 50%, 0.3);
@@ -97,7 +92,7 @@
   justify-content: space-between;
   align-content: center;
   margin: 0;
-  padding: 20px 0 0 0;
+  padding: 20px 0 2px 0;
   position: sticky;
   background: white;
 }

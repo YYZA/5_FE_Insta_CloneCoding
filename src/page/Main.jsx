@@ -6,7 +6,7 @@ import Footer from '../components/Footer'
 import PostCard from '../components/PostCard'
 import { Grid, Image, Text } from '../elements'
 import HomeIcon from '@mui/icons-material/Home'
-import SendOutlinedIcon from '@mui/icons-material/SendOutlined'
+import { FiSend } from 'react-icons/fi'
 import AddBoxOutlinedIcon from '@mui/icons-material/AddBoxOutlined'
 import ExploreOutlinedIcon from '@mui/icons-material/ExploreOutlined'
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined'
@@ -19,10 +19,10 @@ const Main = () => {
         <div className="MainLayout">
           <div className="MainHeader">
             <div className="HeaderSection">
-              <div className="InstagramLogo">Instagram</div>
+              {/* <div className="InstagramLogo">Instagram</div> */}
               <input placeholder=" 🔍  검색" className="HeaderSearchBar" />
               <HomeIcon className="HistoryMainButton" fontSize="5" onClick={() => history.push('/main')} />
-              <SendOutlinedIcon className="HeaderShareButton" fontSize="5" />
+              <FiSend className="HeaderShareButton" fontSize="5" />
               <AddBoxOutlinedIcon className="PostAddButton" fontSize="5" onClick={() => history.push('/postAdd')} />
               <ExploreOutlinedIcon className="CompassButton" fontSize="5" />
               <FavoriteBorderOutlinedIcon className="HeaderLikeButton" fontSize="5" />

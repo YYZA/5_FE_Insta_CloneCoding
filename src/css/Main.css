@@ -111,16 +111,16 @@
 }
 
 .HeaderShareButton {
-  margin: 0.4rem 0 0 -1rem;
-  font-size: 1.6rem;
-  transform: rotate(-30deg);
+  margin: 0.6rem 0 0 -1rem;
+  font-size: 1.5rem;
+  transform: rotate(10deg);
 }
 .HeaderShareButton:hover {
   cursor: pointer;
 }
 @media (max-width: 1000px) {
   .HeaderShareButton {
-    margin: 7.5px 0 0 5px;
+    margin: 12px 0 0 5px;
   }
 }
 

@@ -4,7 +4,7 @@ import UserNameTag from '../components/UserNameTag'
 import { Grid, Image, Text } from '../elements'
 import { history } from '../redux/configureStore'
 import NavigateBeforeOutlinedIcon from '@mui/icons-material/NavigateBeforeOutlined'
-import SendOutlinedIcon from '@mui/icons-material/SendOutlined'
+import { FiSend } from 'react-icons/fi'
 
 const PostComment = () => {
   return (
@@ -16,7 +16,7 @@ const PostComment = () => {
             <Text size="25px" margin="10px 0 0 -5px" fontWeight="bold">
               댓글
             </Text>
-            <SendOutlinedIcon className="PostHeaderSendButton" fontSize="5" />
+            <FiSend className="PostHeaderSendButton" fontSize="50" />
           </div>
           <hr className="Contour" />
           <div className="DetailComment">
