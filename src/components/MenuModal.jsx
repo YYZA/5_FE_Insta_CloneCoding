@@ -6,7 +6,7 @@ const MenuModal = (props) => {
   const { open, close } = props
 
   const Alert = () => {
-    window.alert('아직 준비중인 기능입니다')
+    window.alert('아직 준비 중인 기능입니다')
   }
 
   return (

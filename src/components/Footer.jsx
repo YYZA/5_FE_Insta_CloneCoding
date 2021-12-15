@@ -4,6 +4,7 @@ import { Grid, Image, Text } from '../elements'
 import FaceIcon from '@mui/icons-material/Face'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import UserNameTag from './UserNameTag'
+import BasicProfile from '../shared/icon/originalLogo.png'
 
 const Footer = () => {
   const members = [
@@ -48,6 +49,20 @@ const Footer = () => {
   return (
     <>
       <div className="FooterLayout">
+        <Grid is_flex>
+          <div className="MyNameTag">
+            <Image src={BasicProfile} shape="circle" size="55"></Image>
+            <div className="MyAccountInfo">
+              <text className="MyAccountNickname">dlgkstoa</text>
+              <text className="MyName">이한샘</text>
+            </div>
+            <div className="ChangeMyAccountButton">전환</div>
+          </div>
+        </Grid>
+        <Grid is_flex margin="10px 0 10px 0">
+          <div className="FooterGuideText">회원님을 위한 추천</div>
+          <div className="FooterGuideButton">모두 보기</div>
+        </Grid>
         {members.map((member) => {
           return (
             <div className="FooterContainer">

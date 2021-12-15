@@ -30,10 +30,11 @@
 }
 
 /* 포스트 좋아요, 댓글, 공유, 북마크 버튼 */
-.SNSButtons {
+.SnsButtons {
   display: flex;
   justify-content: flex-start;
   align-content: center;
+  margin: 0 0 10px 0;
 }
 
 .LikeButton {
@@ -46,18 +47,18 @@
 }
 
 .PostCommentButton {
-  font-size: 30px;
-  margin: 0px 20px 13px 0px;
-  transform: scaleX(-1);
+  width: 45px;
+  height: 45px;
+  margin: 5px 10px 5px 0;
 }
 .PostCommentButton:hover {
   cursor: pointer;
 }
 
 .PostShareButton {
-  font-size: 30px;
-  margin: 0px 12px 13px 0;
-  transform: rotate(10deg);
+  width: 45px;
+  height: 45px;
+  margin: 4px 10px 7px 0;
 }
 .PostShareButton:hover {
   cursor: pointer;
@@ -65,9 +66,9 @@
 
 .BookMarkButton {
   font-size: 35px;
-  margin: 0 0 7px 390px;
+  margin: 10px 0 0 375px;
 }
-.PostShareButton:hover {
+.BookMarkButton:hover {
   cursor: pointer;
 }
 /* 포스트 좋아요, 댓글, 공유, 북마크 버튼 */
@@ -82,15 +83,14 @@
 }
 
 .DescriptioncUserName {
-  font-weight: bold;
-  margin: 5px 20px 0px 20px;
-  font-size: 18px;
+  font-weight: 700;
+  margin: 5px 10px 0px 20px;
+  font-size: 16px;
 }
 
 .DescriptionContent {
-  font-weight: bold;
-  margin: 0px 20px 10px 0;
-  font-size: 18px;
+  margin: 0px 10px 10px 0;
+  font-size: 15px;
 }
 /* 해당 유저의 이름과 포스트 내용 */
 
@@ -98,10 +98,10 @@
 .CommentCnt {
   margin: 0 0 5px 15px;
   font-size: 0.9rem;
+  font-weight: 700;
   color: rgba(0, 0, 0, 0.4);
   width: 10rem;
 }
-
 .CommentCnt:hover {
   cursor: pointer;
 }
@@ -113,11 +113,13 @@
 }
 
 .CommentUserName {
-  font-weight: bold;
-  margin: 0px 20px 0px 20px;
+  font-weight: 600;
+  font-size: 15px;
+  margin: 0px 10px 0px 20px;
 }
 
 .CommentContent {
+  font-size: 15px;
   margin-bottom: 5px;
 }
 /* 해당 포스트에 달린 댓글과 댓글 작성자 이름 */
@@ -126,6 +128,6 @@
 .CreatedAt {
   margin: 10px 10px 20px 15px;
   color: rgba(0, 0, 0, 0.6);
-  font-size: 0.8rem;
+  font-size: 0.6rem;
 }
 /* 해당 포스트의 작성 시간 */
