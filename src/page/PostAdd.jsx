@@ -17,14 +17,15 @@ const PostAdd = () => {
 
   const onPostAdd = () => {
     let formData = new FormData()
+    console.log(formData)
 
     formData.append('file', files[0])
 
     let postData = [
       {
         content: 'content',
-        userId: 'userId',
-        nickname: 'nickname',
+        // userId: 'userId',
+        // nickname: 'nickname',
       },
     ]
 
@@ -41,7 +42,7 @@ const PostAdd = () => {
     <>
       <div className="ImageInputButton" onDrop={onDrop}>
         <label for="ImageInput">이미지 선택하기</label>
-        <input type="file" id="ImageInput" name="ImageInput" accept="image/png, image/jpeg" />
+        <input type="file" id="ImageInput" name="ImageInput" accept="image/png, image/jpeg, , image/jpg, image/gif" />
       </div>
       <button size="large" onClick={onPostAdd}>
         게시물 작성하기

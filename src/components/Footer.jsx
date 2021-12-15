@@ -64,7 +64,7 @@ const Footer = () => {
         <div>
           <Text color="#6e6e6e" size="10px" margin="20px 10px 10px 10px">
             소개·도움말·홍보 센터·API·채용 정보·개인정보처리방침·약관·위치·인기 계정·해시태그·언어 <br />
-            <br /> © 2021 INSTAGRAM FROM 2조
+            <br /> © 2021 INSTAGRAM FROM 5조
           </Text>
         </div>
       </div>

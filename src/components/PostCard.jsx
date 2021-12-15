@@ -1,13 +1,41 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import '../css/PostCard.css'
 import UserNameTag from './UserNameTag'
+import MenuModal from './MenuModal'
 import { Grid, Image, Text } from '../elements'
 import { history } from '../redux/configureStore'
 import MoreHorizOutlinedIcon from '@mui/icons-material/MoreHorizOutlined'
 import FavoriteBorderRoundedIcon from '@mui/icons-material/FavoriteBorderRounded'
 import FavoriteRoundedIcon from '@mui/icons-material/FavoriteRounded'
+import MapsUgcOutlinedIcon from '@mui/icons-material/MapsUgcOutlined'
+import SendOutlinedIcon from '@mui/icons-material/SendOutlined'
+import 'moment'
+import 'moment/locale/ko'
+import moment from 'moment'
 
-const PostCard = () => {
+const PostCard = (props) => {
+  const [modalOpen, setModalOpen] = useState(false)
+  const dispatch = useDispatch()
+
+  const openModal = () => {
+    setModalOpen(true)
+  }
+
+  const closeModal = () => {
+    setModalOpen(false)
+  }
+
+  window.addEventListener('keyup', (e) => {
+    if (setModalOpen(false) && e.key === 'Escape') {
+      setModalOpen(true)
+    }
+  })
+
+  const a = props.updatedAt
+
+  const day = moment(props.updatedAt).fromNow()
+
   return (
     <>
       <div className="Container">
@@ -15,19 +43,13 @@ const PostCard = () => {
           <div className="UserNameTagButton">
             <UserNameTag _onClick={() => history.push('/postComment')} hover />
           </div>
-          <MoreHorizOutlinedIcon className="MoreButton"></MoreHorizOutlinedIcon>
+          <MoreHorizOutlinedIcon className="MoreButton" onClick={openModal}></MoreHorizOutlinedIcon>
         </Grid>
         <Image size="600" src="https://www.hidomin.com/news/photo/202105/453232_224470_4025.jpg" />
         <div className="SnsButtons">
-          <FavoriteRoundedIcon fontSize="5" className="LikeButton" />
-          {/* <ModeCommentOutlinedIcon className="CommentButton" />
-          <NearMeOutlinedIcon className="ShareButton" /> */}
-          <div className="CommentButton2" onClick={() => history.push('/PostComment')}>
-            <Image src="https://drive.google.com/file/d/1mzHCCJtqMRwbTywrcdm1sqStZeAHZFDB/view" size="40"></Image>
-          </div>
-          <div className="ShareButton2">
-            <Image src="https://o.remove.bg/downloads/0e6a7f30-dd91-4e1d-8f56-79344140db56/insta_icons_2_generated__2_-removebg-preview-removebg-preview.png" size="40"></Image>
-          </div>
+          <FavoriteRoundedIcon className="LikeButton" fontSize="5" />
+          <MapsUgcOutlinedIcon className="PostCommentButton" fontSize="5" onClick={() => history.push('/PostComment')} />
+          <SendOutlinedIcon className="PostShareButton" fontSize="5" />
         </div>
         <div className="ContentSection">
           <div className="DescriptioncUserName">dlwlrma</div>
@@ -46,6 +68,7 @@ const PostCard = () => {
         </div>
         <div className="CreatedAt">31분 전</div>
       </div>
+      <MenuModal open={modalOpen} close={closeModal} header={'123'} />
     </>
   )
 }

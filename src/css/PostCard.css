@@ -38,44 +38,29 @@
 
 .LikeButton {
   font-size: 2em;
-  margin: 11px 7px 10px 20px;
+  margin: 11px 15px 10px 20px;
+  color: crimson;
 }
 .LikeButton:hover {
   cursor: pointer;
 }
 
-/* .CommentButton {
-  font-size: 3em;
-  margin: 10px 10px 10px 0px;
+.PostCommentButton {
+  font-size: 2em;
+  transform: perspective(50);
+  margin: 10px 20px 10px 0px;
+  transform: scaleX(-1);
 }
-.CommentButton:hover {
-  cursor: pointer;
-} */
-
-.CommentButton2 {
-  margin: 6px 3px 0 0;
-  width: auto;
-  height: auto;
-}
-.CommentButton2:hover {
+.PostCommentButton:hover {
   cursor: pointer;
 }
 
-/* .ShareButton {
-  font-size: 3em;
-  margin: 10px 10px 12px 0px;
-  transform: rotate(10deg);
+.PostShareButton {
+  font-size: 2em;
+  margin: 6px 10px 12px 0px;
+  transform: rotate(-30deg);
 }
-.ShareButton:hover {
-  cursor: pointer;
-} */
-
-.ShareButton2 {
-  margin: 5px 0 0 0;
-  width: auto;
-  height: auto;
-}
-.ShareButton2:hover {
+.PostShareButton:hover {
   cursor: pointer;
 }
 /* 포스트 좋아요, 댓글, 공유 버튼 */
