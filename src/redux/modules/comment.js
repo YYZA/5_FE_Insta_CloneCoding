@@ -1,5 +1,4 @@
 import { createAction, handleActions } from 'redux-actions'
-import axios from 'axios'
 import { apis } from '../../shared/api'
 import { produce } from 'immer'
 import { actionCreators as postActions } from './post'
@@ -12,7 +11,7 @@ const DELETE_COMMENT = 'DELETE_COMMENT'
 const LOADING_COMMENT = 'LOADING_COMMENT'
 
 // Action Creators
-const getComment = createAction(GET_COMMENT, (postId, comments) => ({ postId, comments }))
+const getComment = createAction(GET_COMMENT, (postId, commentlist) => ({ postId, commentlist }))
 const addComment = createAction(ADD_COMMENT, (postId, comment) => ({ postId, comment }))
 const editComment = createAction(EDIT_COMMENT, (postId, commentId, newComment) => ({ postId, commentId, newComment }))
 const deleteComment = createAction(DELETE_COMMENT, (postId, commentId) => ({ postId, commentId }))
@@ -24,40 +23,42 @@ const initialState = {
 }
 
 const initialComment = {
-  comments: [
+  post: [
     {
+      id: 1,
+      userId: 2,
+      nickname: 'root',
+      imgUrl: 'https://hanghaelog.s3.ap-northeast-2.amazonaws.com/original/163898284838428.jpg',
+      content: '올라가라',
+      likeCnt: 124,
+      commentCnt: 12,
+      createdAt: '2021-12-09T10:24:20.000Z',
+      updatedAt: '2021-12-09T10:26:19.000Z',
+    },
+  ],
+  commentlist: [
+    {
+      postId: 1,
       id: 1,
       comment: '댓글입니다',
       nickname: 'root',
       createdAt: '2021-12-09T10:28:46.000Z',
       updatedAt: '2021-12-09T10:28:46.000Z',
-      userId: 2,
-      postId: 1,
     },
   ],
-
-  post: {
-    id: 1,
-    imgUrl: 'https://hanghaelog.s3.ap-northeast-2.amazonaws.com/original/163898284838428.jpg',
-    content: '올라가라',
-    nickname: 'root',
-    createdAt: '2021-12-09T10:24:20.000Z',
-    updatedAt: '2021-12-09T10:26:19.000Z',
-    userId: 2,
-  },
 }
 
 // Thunk function
-const getCommentDB = (post_id) => {
+const getCommentDB = (postId) => {
   return async function (dispatch, getState, { history }) {
-    if (!post_id) {
+    if (!postId) {
       return
     }
 
     apis
-      .commentList(post_id)
+      .commentList(postId)
       .then((response) => {
-        dispatch(getComment(post_id, response.data.commentlist))
+        dispatch(getComment(postId, response.data.commentlist))
       })
       .catch((error) => {
         console.log(error)
@@ -79,10 +80,10 @@ const addCommentDB = (postId, commentlist) => {
   }
 }
 
-const editCommentDB = (postId, commentId, newContent, setEditMode) => {
+const editCommentDB = (newContent, setEditMode) => {
   return async function (dispatch, getState, { history }) {
-    const { data } = await apis.editComment(postId, commentId, newContent)
-    dispatch(editComment(commentId, data))
+    const { data } = await apis.editComment(newContent)
+    dispatch(editComment(data))
     setEditMode(false)
   }
 }

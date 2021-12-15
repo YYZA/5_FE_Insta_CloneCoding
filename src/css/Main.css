@@ -28,60 +28,192 @@
 .HeaderSection {
   display: flex;
   justify-content: space-between;
-  max-width: 600px;
-  min-width: 600px;
-  width: auto;
-  height: auto;
-  margin: 0 auto;
+  max-width: 975px;
+  min-width: 400px;
+  width: 870px;
+  height: 45px;
+  margin-right: 20px;
+  /* 레이아웃 작업 후 삭제 */
+  border: 1px solid red;
+}
+@media (max-width: 1300px) {
+  .HeaderSection {
+    width: 870px;
+    margin-right: 16px;
+  }
+}
+@media (max-width: 1000px) {
+  .HeaderSection {
+    width: 700px;
+    margin-right: 10px;
+  }
+}
+@media (max-width: 750px) {
+  .HeaderSection {
+    width: 600px;
+    margin-right: 10px;
+  }
+}
+@media (max-width: 624px) {
+  .HeaderSection {
+    width: 95%;
+  }
 }
 
-.InstagramLogo {
-  margin: 0.8rem 0 0 0.1rem;
-  font-size: 1.6rem;
+.InstagramLogo:hover {
+  cursor: pointer;
+}
+@media (max-width: 1000px) {
+  .InstagramLogo {
+    margin: 0.5rem 0 0 0;
+  }
 }
 
 .HeaderSearchBar {
-  margin: 0.7rem 2rem 0.7rem 6rem;
-  padding: 0 2rem 0 0.7rem;
+  margin: 0.5rem 0 0.4rem 10rem;
+  padding: 0 0 0 0.7rem;
   font-size: 1rem;
-  width: 16rem;
+  width: 250px;
   border: none;
   border-radius: 0.7rem;
-  background-color: rgba(193, 193, 193, 0.2);
+  background-color: rgba(193, 193, 193, 0.3);
+  color: gray;
 }
 .HeaderSearchBar:focus {
   outline: none;
 }
+@media (max-width: 1000px) {
+  .HeaderSearchBar {
+    display: none;
+  }
+}
+
+.HistoryMainButton {
+  margin: 0.5rem 0 0 1rem;
+  font-size: 1.8rem;
+}
+.HistoryMainButton:hover {
+  cursor: pointer;
+}
+@media (max-width: 1000px) {
+  .HistoryMainButton {
+    margin: 10px 0 0px 350px;
+  }
+}
+@media (max-width: 750px) {
+  .HistoryMainButton {
+    margin: 10px 0 0px 250px;
+  }
+}
+
+.HeaderShareButton {
+  margin: 0.6rem 0 0 -1rem;
+  font-size: 1.5rem;
+  transform: rotate(10deg);
+}
+.HeaderShareButton:hover {
+  cursor: pointer;
+}
+@media (max-width: 1000px) {
+  .HeaderShareButton {
+    margin: 12px 0 0 5px;
+  }
+}
 
 .PostAddButton {
-  margin: 1rem 0.4rem 0 0;
+  margin: 0.5rem 0 0 -1rem;
   font-size: 1.8rem;
 }
 .PostAddButton:hover {
   cursor: pointer;
 }
-
-.HeaderShareButton {
-  margin: 0.8rem 0.4rem 0 0;
-  width: auto;
-  height: auto;
+@media (max-width: 1000px) {
+  .PostAddButton {
+    margin: 10px 0 0 5px;
+  }
 }
-.HeaderShareButton:hover {
+
+.CompassButton {
+  margin: 0.5rem 0 0 -1rem;
+  font-size: 1.8rem;
+}
+.CompassButton:hover {
   cursor: pointer;
+}
+@media (max-width: 1000px) {
+  .CompassButton {
+    margin: 10px 0 0 5px;
+  }
+}
+
+.HeaderLikeButton {
+  margin: 0.5rem 0 0 -1rem;
+  font-size: 1.8rem;
+}
+.HeaderLikeButton:hover {
+  cursor: pointer;
+}
+@media (max-width: 1000px) {
+  .HeaderLikeButton {
+    margin: 10px 0 0 5px;
+  }
 }
 
 .UserPageButton {
-  margin: 1rem 1.3rem 0 0;
+  margin: 0.55rem 0 0 -1rem;
   font-size: 1.8rem;
 }
 .UserPageButton:hover {
   cursor: pointer;
 }
+@media (max-width: 1000px) {
+  .UserPageButton {
+    margin: 10px 0 0 5px;
+  }
+}
 
-.Layout {
+.BodyLayout {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.MainFooterLayout {
+  width: 250px;
+  display: flex;
+  align-self: flex-start;
+  justify-self: center;
+  order: 1;
+  margin-top: 50px;
+  margin-right: 36%;
+  /* 레이아웃 작업 후 삭제 */
+  border: 1px solid red;
+}
+@media (max-width: 1000px) {
+  .MainFooterLayout {
+    display: none;
+  }
+}
+
+.MainPostLayout {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-around;
   width: auto;
+  margin-top: 100px;
+  margin-left: 35%;
+  margin-right: 20px;
+  /* 레이아웃 작업 후 삭제 */
+  border: 1px solid red;
+}
+@media (max-width: 1000px) {
+  .MainPostLayout {
+    display: flex;
+    flex-direction: center;
+    margin-left: 0;
+    margin-right: 1%;
+  }
+}
+
+.MyFollowing {
+  border: 1px solid blue;
 }

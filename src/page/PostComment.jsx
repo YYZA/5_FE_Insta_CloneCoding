@@ -4,6 +4,7 @@ import UserNameTag from '../components/UserNameTag'
 import { Grid, Image, Text } from '../elements'
 import { history } from '../redux/configureStore'
 import NavigateBeforeOutlinedIcon from '@mui/icons-material/NavigateBeforeOutlined'
+import { FiSend } from 'react-icons/fi'
 
 const PostComment = () => {
   return (
@@ -15,10 +16,7 @@ const PostComment = () => {
             <Text size="25px" margin="10px 0 0 -5px" fontWeight="bold">
               댓글
             </Text>
-            <div className="CommentHeaderSendButton2">
-              <Image src="https://o.remove.bg/downloads/0e6a7f30-dd91-4e1d-8f56-79344140db56/insta_icons_2_generated__2_-removebg-preview-removebg-preview.png" size="40"></Image>
-            </div>
-            {/* <NearMeOutlinedIcon className="CommentHeaderSendButton" /> */}
+            <FiSend className="PostHeaderSendButton" fontSize="50" />
           </div>
           <hr className="Contour" />
           <div className="DetailComment">

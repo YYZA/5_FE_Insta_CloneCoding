@@ -4,6 +4,7 @@ import { Grid, Image, Text } from '../elements'
 import FaceIcon from '@mui/icons-material/Face'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import UserNameTag from './UserNameTag'
+import BasicProfile from '../shared/icon/originalLogo.png'
 
 const Footer = () => {
   const members = [
@@ -48,6 +49,20 @@ const Footer = () => {
   return (
     <>
       <div className="FooterLayout">
+        <Grid is_flex>
+          <div className="MyNameTag">
+            <Image src={BasicProfile} shape="circle" size="55"></Image>
+            <div className="MyAccountInfo">
+              <text className="MyAccountNickname">dlgkstoa</text>
+              <text className="MyName">이한샘</text>
+            </div>
+            <div className="ChangeMyAccountButton">전환</div>
+          </div>
+        </Grid>
+        <Grid is_flex margin="10px 0 10px 0">
+          <div className="FooterGuideText">회원님을 위한 추천</div>
+          <div className="FooterGuideButton">모두 보기</div>
+        </Grid>
         {members.map((member) => {
           return (
             <div className="FooterContainer">
@@ -64,7 +79,7 @@ const Footer = () => {
         <div>
           <Text color="#6e6e6e" size="10px" margin="20px 10px 10px 10px">
             소개·도움말·홍보 센터·API·채용 정보·개인정보처리방침·약관·위치·인기 계정·해시태그·언어 <br />
-            <br /> © 2021 INSTAGRAM FROM 2조
+            <br /> © 2021 INSTAGRAM FROM 5조
           </Text>
         </div>
       </div>
