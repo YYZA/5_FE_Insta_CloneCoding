@@ -35,7 +35,7 @@ const Header = (props) => {
       <div id="WindowLayerMask" />
       <div className="MainHeader">
         <div className="HeaderSection">
-          <img className="InstagramLogo" src={InstaLogo} onClick={() => history.push('/main')} />
+          <img className="InstagramLogo" size="5" src={InstaLogo} onClick={() => history.push('/main')} />
           <input placeholder=" 🔍  검색" className="HeaderSearchBar" />
           <HomeIcon className="HistoryMainButton" fontSize="5" onClick={() => history.push('/main')} />
           <FiSend className="HeaderShareButton" fontSize="5" />
