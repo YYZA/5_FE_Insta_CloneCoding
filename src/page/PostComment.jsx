@@ -1,7 +1,7 @@
 import React from 'react'
 import '../css/PostComment.css'
 import UserNameTag from '../components/UserNameTag'
-import { Grid, Image, Text } from '../elements'
+import { Grid, Image, Text, Spinner } from '../elements'
 import { history } from '../redux/configureStore'
 import NavigateBeforeOutlinedIcon from '@mui/icons-material/NavigateBeforeOutlined'
 import { FiSend } from 'react-icons/fi'
