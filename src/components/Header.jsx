@@ -11,8 +11,11 @@ import ExploreOutlinedIcon from "@mui/icons-material/ExploreOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import InstaLogo from "../shared/icon/Instagram_logo.svg";
+import { useDispatch } from "react-redux";
+import { userActions } from "../redux/modules/user";
 
 const Header = (props) => {
+  const dispatch = useDispatch();
   return (
     <>
       <div className="Background">
@@ -40,6 +43,7 @@ const Header = (props) => {
               <AccountCircleOutlinedIcon
                 className="UserPageButton"
                 fontSize="5"
+                onClick={() => dispatch(userActions.previewDB(null))}
               />
             </div>
           </div>

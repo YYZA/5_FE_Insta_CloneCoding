@@ -26,7 +26,7 @@ Text.defaultProps = {
   size: "",
   weight: false,
   align: "false",
-  fontWeight: false,
+  fontWeight: "",
 };
 
 const P = styled.p`
