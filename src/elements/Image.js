@@ -50,7 +50,9 @@ const ImageCircle = styled.div`
   border-radius: var(--size);
   background-image: url('${(props) => props.src}');
   background-size: cover;
-  border: 0.5px solid lightslategray;
+  /* 작업 완료 후 보더 none으로 변경 */
+  border: 1px solid blue;
+  /* 작업 완료 후 보더 none으로 변경 */
   background-position: center;
   margin: 5px;
 `

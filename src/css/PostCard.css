@@ -6,8 +6,8 @@
   width: auto;
   height: auto;
   margin: 0 auto;
-  margin-top: 1.5rem;
-  margin-bottom: 2rem;
+  margin-top: 0px;
+  margin-bottom: 30px;
   overflow-y: hidden;
   overflow-x: hidden;
   background-color: white;
@@ -16,6 +16,10 @@
 }
 /* 포스트 박스 하나의 크기 */
 
+.UserNameTagButton {
+  border: 1px solid red;
+  background: none;
+}
 .UserNameTagButton:hover {
   cursor: pointer;
 }
@@ -24,7 +28,6 @@
   margin: 0 1rem 0 0;
   font-size: 2rem;
 }
-
 .MoreButton:hover {
   cursor: pointer;
 }
@@ -87,6 +90,9 @@
   margin: 5px 10px 0px 20px;
   font-size: 16px;
 }
+.DescriptioncUserName:hover {
+  cursor: pointer;
+}
 
 .DescriptionContent {
   margin: 0px 10px 10px 0;
@@ -116,6 +122,9 @@
   font-weight: 600;
   font-size: 15px;
   margin: 0px 10px 0px 20px;
+}
+.CommentUserName:hover {
+  cursor: pointer;
 }
 
 .CommentContent {

@@ -15,9 +15,9 @@ function App() {
       <Route exact path="/" component={SignIn} />
       <Route exact path="/signup" component={SignUp} />
       <Route exact path="/profile" component={UserProfile} />
-      <Route exact path="/main" component={Main} />
-      <Route exact path="/postComment" component={PostComment} />
-      <Route exact path="/postAdd" component={PostAdd} />
+      <Route path="/main" component={Main} />
+      <Route exact path="/main/postComment" component={PostComment} />
+      <Route exact path="/main/postAdd" component={PostAdd} />
     </ConnectedRouter>
   )
 }

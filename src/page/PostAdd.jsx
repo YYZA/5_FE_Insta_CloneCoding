@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
-import Axios from 'axios'
 import { useHistory } from 'react-router'
 import '../css/PostAdd.css'
 import { Grid, Image, Text } from '../elements'
 import { history } from '../redux/configureStore'
-import MoreHorizOutlinedIcon from '@mui/icons-material/MoreHorizOutlined'
-import FavoriteBorderRoundedIcon from '@mui/icons-material/FavoriteBorderRounded'
-import FavoriteRoundedIcon from '@mui/icons-material/FavoriteRounded'
+import { apis } from '../shared/api'
+import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined'
+import { HiOutlinePhotograph } from 'react-icons/hi'
+import { CgPlayButtonR } from 'react-icons/cg'
 
 const PostAdd = () => {
   const [files, setFiles] = useState([])
@@ -31,7 +31,7 @@ const PostAdd = () => {
 
     formData.append('data', new Blob([JSON.stringify(postData)], { type: 'application/json' }))
 
-    Axios.post('/api/postlist', formData)
+    apis.addPost('/api/postlist', formData)
   }
 
   const onDrop = (files) => {
@@ -40,54 +40,27 @@ const PostAdd = () => {
 
   return (
     <>
-      <div className="ImageInputButton" onDrop={onDrop}>
-        <label for="ImageInput">이미지 선택하기</label>
-        <input type="file" id="ImageInput" name="ImageInput" accept="image/png, image/jpeg, , image/jpg, image/gif" />
+      <div className="BackgroundOpacity">
+        <CancelOutlinedIcon className="CancelAddPost" fontSize="5" onClick={() => history.push('/main')} />
+        <div className="FakeModalAddPost">
+          <text className="NewPostCreate">새 게시물 만들기</text>
+          <hr className="TopLine" />
+          <div className="ImageInputSection">
+            <HiOutlinePhotograph className="PhotoIcon" fontSize="5" />
+            <CgPlayButtonR className="PlayIcon" fontSize="5" />
+          </div>
+          <div className="InputGuideText">
+            <label className="InputLabelText" for="ImageInput">
+              사진과 동영상을 여기에 끌어다 놓으세요
+            </label>
+            <button onClick={onPostAdd} className="ImageInputButton" type="button" id="ImageInput" name="ImageInput" accept="image/png, image/jpeg, , image/jpg, image/gif">
+              컴퓨터에서 선택
+            </button>
+          </div>
+        </div>
       </div>
-      <button size="large" onClick={onPostAdd}>
-        게시물 작성하기
-      </button>
     </>
   )
-
-  // return (
-  //   <>
-  //     <div className="Container">
-  //       <div className="ImageInputButton">
-  //         <label for="ImageInput">이미지 선택하기</label>
-  //         <input type="file" id="ImageInput" name="ImageInput" accept="image/png, image/jpeg" />
-  //       </div>
-  //       <Image size="600" src="https://www.hidomin.com/news/photo/202105/453232_224470_4025.jpg" />
-  //       <div className="SnsButtons">
-  //         <FavoriteRoundedIcon fontSize="5" className="LikeButton" />
-  //         {/* <ModeCommentOutlinedIcon className="CommentButton" />
-  //         <NearMeOutlinedIcon className="ShareButton" /> */}
-  //         <div className="CommentButton2" onClick={() => history.push('/PostComment')}>
-  //           <Image src="https://o.remove.bg/downloads/33ff2c6e-9723-4346-8d9e-d0bd6ab84c73/insta_icons_2_generated__1_-removebg-preview-removebg-preview.png" size="40"></Image>
-  //         </div>
-  //         <div className="ShareButton2">
-  //           <Image src="https://o.remove.bg/downloads/0e6a7f30-dd91-4e1d-8f56-79344140db56/insta_icons_2_generated__2_-removebg-preview-removebg-preview.png" size="40"></Image>
-  //         </div>
-  //       </div>
-  //       <div className="ContentSection">
-  //         <div className="DescriptioncUserName">dlwlrma</div>
-  //         <div className="DescriptionContent">💜</div>
-  //       </div>
-  //       <div className="CommentCnt" onClick={() => history.push('/PostComment')}>
-  //         댓글 45,241개 모두 보기
-  //       </div>
-  //       <div className="CommentSection">
-  //         <div className="CommentUserName">dlgkstoa</div>
-  //         <div className="CommentContent">팬아저</div>
-  //       </div>
-  //       <div className="CommentSection">
-  //         <div className="CommentUserName">stuffed_cow</div>
-  //         <div className="CommentContent">우윳빛깔 이지은</div>
-  //       </div>
-  //       <div className="CreatedAt">31분 전</div>
-  //     </div>
-  //   </>
-  // )
 }
 
 export default PostAdd

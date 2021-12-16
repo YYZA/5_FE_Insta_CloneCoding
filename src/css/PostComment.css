@@ -1,50 +1,40 @@
 .CommetContainer {
-  position: relative;
-  max-width: 600px;
-  min-width: 300px;
-  width: auto;
-  height: auto;
-  margin: 0 auto;
-  margin-top: 1rem;
-  overflow-y: hidden;
-  overflow-x: hidden;
-  background-color: white;
-  border: 0.5px solid hsla(0, 0%, 50%, 0.4);
-  border-bottom: none;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-/* 코멘트 페이지 헤더 */
-.CommentHeader {
-  display: flex;
-  justify-content: space-between;
   align-content: center;
+  justify-content: center;
+  position: absolute;
+  top: 5%;
+  left: 10%;
+  right: 10%;
+  bottom: 3%;
+  height: 800px;
 }
 
-.GoBackButton {
-  margin: 0px 0 -5px 0;
-  font-size: 3rem;
-}
-.GoBackButton:hover {
-  cursor: pointer;
+.RightCommentPage {
+  background-color: white;
+  top: 5%;
+  left: 10%;
+  right: 10%;
+  bottom: 3%;
+  height: 800px;
+  border-radius: 0 10px 10px 0;
 }
 
-.PostHeaderSendButton {
-  margin: 10px 15px 0 0;
-  font-size: 2rem;
-  transform: rotate(10deg);
+.MyFollowingCheck {
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0 0 0 -220px;
 }
-.PostHeaderSendButton:hover {
-  cursor: pointer;
+
+.MoreButton {
+  margin: 0 20px 0 0;
 }
-/* 코멘트 페이지 헤더 */
 
 .DetailComment {
   display: flex;
   justify-content: flex-start;
   align-content: center;
+  margin: 0 0 0 5px;
 }
 
 .Contour {
@@ -56,7 +46,7 @@
   display: flex;
   justify-content: space-between;
   align-content: center;
-  margin-bottom: 20px;
+  margin: 0 0 20px 5px;
 }
 
 .UserComment {
