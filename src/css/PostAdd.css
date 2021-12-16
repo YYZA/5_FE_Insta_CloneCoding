@@ -29,13 +29,139 @@
   justify-content: space-between;
   top: 15%;
   bottom: 15%;
-  left: 40%;
+  left: 37%;
   right: 35%;
   width: 40rem;
   height: 40rem;
   background-color: white;
   border: none;
   border-radius: 20px;
+}
+@media (max-width: 2100px) {
+  .FakeModalAddPost {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    top: 15%;
+    bottom: 15%;
+    left: 34%;
+    right: 40%;
+    width: 40rem;
+    height: 40rem;
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+  }
+}
+@media (max-width: 1800px) {
+  .FakeModalAddPost {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    top: 15%;
+    bottom: 15%;
+    left: 31%;
+    right: 40%;
+    width: 40rem;
+    height: 40rem;
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+  }
+}
+@media (max-width: 1600px) {
+  .FakeModalAddPost {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    top: 15%;
+    bottom: 15%;
+    left: 29%;
+    right: 40%;
+    width: 40rem;
+    height: 40rem;
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+  }
+}
+@media (max-width: 1400px) {
+  .FakeModalAddPost {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    top: 15%;
+    bottom: 15%;
+    left: 26%;
+    right: 40%;
+    width: 40rem;
+    height: 40rem;
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+  }
+}
+@media (max-width: 1200px) {
+  .FakeModalAddPost {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    top: 15%;
+    bottom: 15%;
+    left: 23.5%;
+    right: 40%;
+    width: 40rem;
+    height: 40rem;
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+  }
+}
+@media (max-width: 1000px) {
+  .FakeModalAddPost {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    top: 15%;
+    bottom: 15%;
+    left: 17.5%;
+    right: 40%;
+    width: 40rem;
+    height: 40rem;
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+  }
+}
+@media (max-width: 900px) {
+  .FakeModalAddPost {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    top: 15%;
+    bottom: 10%;
+    left: 10%;
+    right: 15%;
+    width: 40rem;
+    height: 40rem;
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+  }
 }
 
 .NewPostCreate {
