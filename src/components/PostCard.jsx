@@ -66,33 +66,37 @@ const PostCard = (props) => {
     <>
       <div className="Container">
         <Grid is_flex>
-          <div className="UserNameTagButton">
-            <UserNameTag _onClick={() => history.push('/postComment')} hover />
-          </div>
-          <MoreHorizOutlinedIcon className="MoreButton" onClick={openModal}></MoreHorizOutlinedIcon>
+          <UserNameTag />
+          <MoreHorizOutlinedIcon className="MoreButton" onClick={openModal} />
         </Grid>
         <Image size="600" src="https://www.hidomin.com/news/photo/202105/453232_224470_4025.jpg" />
         <div className="SnsButtons">
           {/* <Like /> */}
           <FavoriteRoundedIcon className="LikeButton" fontSize="5" onClick={myLike} />
-          <img className="PostCommentButton" src={CommentButton} onClick={() => history.push('/postAdd')} />
+          <img className="PostCommentButton" src={CommentButton} onClick={() => history.push('/main/postComment')} />
           <img className="PostShareButton" src={ShareButton} />
           <BiBookmark className="BookMarkButton" fontSize="5" />
         </div>
         <div className="ContentSection">
-          <div className="DescriptioncUserName">dlwlrma</div>
+          <div className="DescriptioncUserName" onClick={() => history.push('/profile')}>
+            dlwlrma
+          </div>
           <div className="DescriptionContent">💜안녕하세요</div>
         </div>
-        <div className="CommentCnt" onClick={() => history.push('/PostComment')}>
+        <div className="CommentCnt" onClick={() => history.push('/main/postComment')}>
           댓글 45,241개 모두 보기
         </div>
         <div className="CommentSection">
-          <div className="CommentUserName">dlgkstoa</div>
-          <div className="CommentContent">팬아저</div>
+          <div className="CommentUserName" onClick={() => history.push('/profile')}>
+            dlgkstoa
+          </div>
+          <div className="CommentContent">아이유</div>
         </div>
         <div className="CommentSection">
-          <div className="CommentUserName">stuffed_cow</div>
-          <div className="CommentContent">우윳빛깔 이지은</div>
+          <div className="CommentUserName" onClick={() => history.push('/profile')}>
+            stuffed_cow
+          </div>
+          <div className="CommentContent">어? 이쁘다</div>
         </div>
         <div className="CreatedAt">31분 전</div>
       </div>

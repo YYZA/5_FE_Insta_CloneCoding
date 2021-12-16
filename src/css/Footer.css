@@ -11,37 +11,42 @@
 .MyNameTag {
   display: flex;
   align-items: center;
+  width: 100px;
 }
 
 .MyAccountNickname {
   display: flex;
   flex-wrap: wrap;
-  width: 100px;
-  font-size: 15px;
+  width: auto;
+  font-size: 14px;
   font-weight: 600;
 }
 
 .MyName {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
   color: gray;
   margin-left: 1px;
 }
 
+.ChangeAccountSection {
+  width: 50px;
+  margin: 20px;
+}
 .ChangeMyAccountButton {
   display: flex;
-  font-size: 13px;
+  width: 40px;
+  font-size: 12px;
   font-weight: 700;
   color: rgb(0, 157, 255);
-  margin-left: 50px;
 }
 .ChangeMyAccountButton:hover {
   cursor: pointer;
 }
 
 .FooterGuideText {
-  font-size: 12px;
-  font-weight: 600;
+  font-size: 13px;
+  font-weight: 800;
   color: rgb(155, 155, 155);
 }
 .FooterGuideButton {
@@ -62,7 +67,7 @@
 .FollowButton {
   display: flex;
   margin-right: 10px;
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: 600;
   color: rgb(0, 157, 255);
 }

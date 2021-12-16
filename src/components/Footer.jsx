@@ -51,12 +51,16 @@ const Footer = () => {
       <div className="FooterLayout">
         <Grid is_flex>
           <div className="MyNameTag">
-            <Image src={BasicProfile} shape="circle" size="55"></Image>
-            <div className="MyAccountInfo">
-              <text className="MyAccountNickname">dlgkstoa</text>
-              <text className="MyName">이한샘</text>
+            <Grid is_flex border="1px solid green" width="200px">
+              <Image src={BasicProfile} shape="circle" size="55"></Image>
+              <div className="MyAccountInfo">
+                <text className="MyAccountNickname">123456789012345</text>
+                <text className="MyName">이한샘</text>
+              </div>
+            </Grid>
+            <div className="ChangeAccountSection">
+              <div className="ChangeMyAccountButton">전환</div>
             </div>
-            <div className="ChangeMyAccountButton">전환</div>
           </div>
         </Grid>
         <Grid is_flex margin="10px 0 10px 0">
@@ -67,7 +71,7 @@ const Footer = () => {
           return (
             <div className="FooterContainer">
               <div className="NameTag">
-                <Image src={member.src} shape="circle" size="36"></Image>
+                <Image src={member.src} shape="circle" size="30"></Image>
                 <Text color="#333" size="14px" margin="0">
                   {member.nickname}
                 </Text>
@@ -77,7 +81,7 @@ const Footer = () => {
           )
         })}
         <div>
-          <Text color="#6e6e6e" size="10px" margin="20px 10px 10px 10px">
+          <Text color="#919191" size="10px" margin="20px 10px 10px 10px">
             소개·도움말·홍보 센터·API·채용 정보·개인정보처리방침·약관·위치·인기 계정·해시태그·언어 <br />
             <br /> © 2021 INSTAGRAM FROM 5조
           </Text>

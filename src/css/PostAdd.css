@@ -1,7 +1,91 @@
-.ImageInputButton {
+.BackgroundOpacity {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 500;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.CancelAddPost {
+  font-size: 50px;
+  position: absolute;
+  top: 1%;
+  right: 1%;
+  color: white;
+}
+.CancelAddPost:hover {
+  cursor: pointer;
+}
+
+.FakeModalAddPost {
+  position: absolute;
   display: flex;
-  justify-content: space-evenly;
-  align-content: center;
-  margin: 1.5rem 0 0 8rem;
-  height: 3rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  top: 15%;
+  bottom: 15%;
+  left: 40%;
+  right: 35%;
+  width: 40rem;
+  height: 40rem;
+  background-color: white;
+  border: none;
+  border-radius: 20px;
+}
+
+.NewPostCreate {
+  margin: 10px 0 0 0;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.TopLine {
+  color: rgba(128, 128, 128, 0.5);
+  width: 99%;
+  margin-top: -125px;
+}
+
+.PhotoIcon {
+  font-size: 90px;
+  transform: rotate(-10deg);
+  color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 200px;
+  left: 250px;
+}
+.PlayIcon {
+  font-size: 75px;
+  transform: rotate(5deg);
+  color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 230px;
+  left: 300px;
+  width: auto;
+  background-color: white;
+}
+
+.InputGuideText {
+  font-size: 25px;
+  font-weight: 300;
+  margin: 0 0 250px 120px;
+}
+
+.ImageInputButton {
+  margin: 10px 0 0 135px;
+  width: 120px;
+  height: 30px;
+  font-size: 15px;
+  font-weight: 700;
+  color: white;
+  background-color: rgb(0, 166, 255);
+  border: none;
+  border-radius: 5px;
+}
+.ImageInputButton:hover {
+  cursor: pointer;
 }

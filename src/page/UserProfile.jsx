@@ -72,11 +72,10 @@ const Container = styled.div`
   width: 1500px;
   border-radius: 5px;
   background-color: #fff;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
   margin: 0px auto;
   text-align: center;
   display: flex;
   align-items: center;
   flex-direction: column;
-`;
+`

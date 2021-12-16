@@ -1,5 +1,5 @@
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
-import React from 'react'
 import '../css/MenuModal.css'
 
 const MenuModal = (props) => {
@@ -10,21 +10,23 @@ const MenuModal = (props) => {
   }
 
   return (
-    <div className={open ? 'openModal modal' : 'modal'}>
-      {open ? (
-        <section>
-          <main>
-            <ModalboxR onClick={Alert}>신고</ModalboxR>
-            <ModalboxR onClick={Alert}>팔로우 취소</ModalboxR>
-            <Modalbox onClick={Alert}>게시물로 이동</Modalbox>
-            <Modalbox onClick={Alert}>공유 대상...</Modalbox>
-            <Modalbox onClick={Alert}>링크 복사</Modalbox>
-            <Modalbox onClick={Alert}>퍼가기</Modalbox>
-            <Modalbox onClick={close}>취소</Modalbox>
-          </main>
-        </section>
-      ) : null}
-    </div>
+    <>
+      <div className={open ? 'openModal modal' : 'modal'}>
+        {open ? (
+          <section>
+            <main>
+              <ModalboxR onClick={Alert}>신고</ModalboxR>
+              <ModalboxR onClick={Alert}>팔로우 취소</ModalboxR>
+              <Modalbox onClick={Alert}>게시물로 이동</Modalbox>
+              <Modalbox onClick={Alert}>공유 대상...</Modalbox>
+              <Modalbox onClick={Alert}>링크 복사</Modalbox>
+              <Modalbox onClick={Alert}>퍼가기</Modalbox>
+              <Modalbox onClick={close}>취소</Modalbox>
+            </main>
+          </section>
+        ) : null}
+      </div>
+    </>
   )
 }
 

@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const api = axios.create({
-  baseURL: 'http://13.209.4.79:5000/',
+  baseURL: 'http://13.125.149.78/',
   headers: {
     'X-Requested-With': 'XMLHttpRequest',
     'Content-type': 'application/json',
@@ -9,6 +9,14 @@ const api = axios.create({
     accept: 'application/json',
   },
 })
+//header에 쿠키 자체를 담아서 보내도록 수정
+
+document.cookie = 'authCookie = '
+
+// setCookie('authCookie', '', '1')
+
+// const cookies = getCookie("authCookie")
+//
 
 api.interceptors.request.use((config) => {
   const accessToken = document.cookie.split('=')[1]
