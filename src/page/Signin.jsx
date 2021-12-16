@@ -14,12 +14,12 @@ const Siginin = (props) => {
 
   const onSubmit = async (data) => {
     await axios
-      .post('https://a2efb73a-f81e-4000-821c-301da28a914a.mock.pstmn.io/api/userlist/login', {
+      .post("http://13.125.149.78/api/userlist/login", {
         userId: data.email,
         password: data.password,
       })
       .then((res) => {
-        document.cookie = 'x_auth' + '=' + res.headers.token
+        document.cookie = "authCookie" + "=" + res.data.token;
         dispatch(
           userActions.setUser({
             username: data.email,
