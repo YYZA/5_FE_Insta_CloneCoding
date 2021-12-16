@@ -33,6 +33,14 @@ const PostCard = (props) => {
   const a = props.updatedAt
   const day = moment(props.updatedAt).fromNow()
 
+  const [like, setLike] = useState(false)
+  const myLike = () => {
+    setLike(true)
+  }
+  const disLike = () => {
+    setLike(false)
+  }
+
   const [modalOpen, setModalOpen] = useState(false)
   const openModal = () => {
     setModalOpen(true)
@@ -66,7 +74,7 @@ const PostCard = (props) => {
         <Image size="600" src="https://www.hidomin.com/news/photo/202105/453232_224470_4025.jpg" />
         <div className="SnsButtons">
           {/* <Like /> */}
-          <FavoriteRoundedIcon className="LikeButton" fontSize="5" />
+          <FavoriteRoundedIcon className="LikeButton" fontSize="5" onClick={myLike} />
           <img className="PostCommentButton" src={CommentButton} onClick={() => history.push('/postAdd')} />
           <img className="PostShareButton" src={ShareButton} />
           <BiBookmark className="BookMarkButton" fontSize="5" />

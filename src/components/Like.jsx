@@ -7,7 +7,8 @@ import { Text } from '../elements'
 
 const Like = (props) => {
   const dispatch = useDispatch()
-  const [nowLike, setLike] = React.useState(false)
+  const { like, dislike } = props
+  const [myLike, setLike] = React.useState(false)
   const user_info = useSelector((state) => state.user)
   const like_data = useSelector((state) => state.like.like)
   // console.log(like_data)
@@ -34,15 +35,15 @@ const Like = (props) => {
     }
   }
   // num이 1보다 크거나 같다면 true 0이라면 false
-  if (num >= 1 && !nowLike) {
+  if (num >= 1 && !myLike) {
     setLike(true)
-  } else if (num === 0 && nowLike) {
+  } else if (num === 0 && myLike) {
     setLike(false)
   }
 
-  // console.log(nowLike)
+  // console.log(myLike)
 
-  if (nowLike) {
+  if (myLike) {
     return (
       <React.Fragment>
         <FavoriteIcon
