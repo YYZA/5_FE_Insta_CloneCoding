@@ -3,11 +3,210 @@
   align-content: center;
   justify-content: center;
   position: absolute;
-  top: 5%;
+  top: 9%;
   left: 10%;
   right: 10%;
   bottom: 3%;
   height: 800px;
+}
+@media (max-width: 1400px) {
+  .CommetContainer {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    right: 10%;
+    bottom: 10%;
+    height: 600px;
+  }
+}
+@media (max-width: 1120px) {
+  .CommetContainer {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    right: 10%;
+    bottom: 20%;
+    height: 500px;
+  }
+}
+@media (max-width: 910px) {
+  .CommetContainer {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    position: absolute;
+    top: 10%;
+    left: 25%;
+    right: 25%;
+    bottom: 0;
+    height: 500px;
+  }
+}
+
+.MiniPostCard {
+  background-color: none;
+  width: none;
+  height: none;
+}
+@media (max-width: 910px) {
+  .MiniPostCard {
+    background-color: white;
+    width: 400px;
+    height: 600px;
+    padding: 60px 0 70px 0;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 10px 10px 10px 10px;
+    margin-bottom: 30%;
+  }
+}
+
+.MiniPostCardNameTag {
+  display: none;
+}
+@media (max-width: 910px) {
+  .MiniPostCardNameTag {
+    display: flex;
+    margin: -20px 0 5px 0;
+  }
+}
+
+.MiniPostCardProfile {
+  display: block;
+  margin: 0;
+}
+@media (max-width: 910px) {
+  .MiniPostCardProfile {
+    display: block;
+    margin: -25px 0 5px 10px;
+    width: 40px;
+  }
+}
+
+.MiniPostCardNickname {
+  display: none;
+  margin: 0;
+}
+@media (max-width: 910px) {
+  .MiniPostCardNickname {
+    display: flex;
+    margin: -15px 0 0 10px;
+    font-size: 15px;
+    font-weight: 700;
+    width: auto;
+  }
+}
+
+.MiniPostCardMoreButton {
+  display: none;
+}
+.MiniPostCardMoreButton:hover {
+  cursor: pointer;
+}
+@media (max-width: 910px) {
+  .MiniPostCardMoreButton {
+    font-size: 15px;
+    font-weight: 700;
+    margin: -20px 0 0 240px;
+  }
+}
+
+.MiniPostCardLikeButton {
+  display: none;
+}
+.MiniPostCardLikeButton:hover {
+  cursor: pointer;
+}
+@media (max-width: 910px) {
+  .MiniPostCardLikeButton {
+    display: flex;
+    justify-content: space-between;
+    font-size: 40px;
+    margin: 10px 0 0 10px;
+    color: red;
+  }
+}
+
+.MiniPostCardBookmarkButton {
+  display: none;
+}
+.MiniPostCardBookmarkButton:hover {
+  cursor: pointer;
+}
+@media (max-width: 910px) {
+  .MiniPostCardBookmarkButton {
+    display: flex;
+    justify-content: space-between;
+    font-size: 35px;
+    margin: -35px 0 0 355px;
+  }
+}
+
+.MiniPostCardLikeCnt {
+  display: none;
+}
+@media (max-width: 910px) {
+  .MiniPostCardLikeCnt {
+    display: block;
+    width: auto;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 25px 0 0 15px;
+  }
+}
+
+.MiniPostCardcreatedAt {
+  display: none;
+}
+@media (max-width: 910px) {
+  .MiniPostCardcreatedAt {
+    display: block;
+    width: auto;
+    font-size: 12px;
+    font-weight: 400;
+    margin: 40px 0 0 20px;
+    color: rgba(0, 0, 0, 0.6);
+  }
+}
+
+.PostImage {
+  width: 40rem;
+  height: 800px;
+  display: flex;
+  align-self: center;
+  justify-self: center;
+}
+@media (max-width: 1400px) {
+  .PostImage {
+    width: 30rem;
+    height: 600px;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+  }
+}
+@media (max-width: 1120px) {
+  .PostImage {
+    width: 25rem;
+    height: 500px;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+  }
+}
+@media (max-width: 910px) {
+  .PostImage {
+    width: 400px;
+    height: 500px;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+  }
 }
 
 .RightCommentPage {
@@ -17,13 +216,63 @@
   right: 10%;
   bottom: 3%;
   height: 800px;
+  width: 30rem;
   border-radius: 0 10px 10px 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -ms-overflow-style: none;
+}
+.RightCommentPage::-webkit-scrollbar {
+  display: none;
+}
+@media (max-width: 1400px) {
+  .RightCommentPage {
+    top: 5%;
+    left: 10%;
+    right: 10%;
+    bottom: 3%;
+    height: 600px;
+    width: 25rem;
+    border-radius: 0 10px 10px 0;
+    -ms-overflow-style: none;
+  }
+}
+@media (max-width: 1120px) {
+  .RightCommentPage {
+    top: 5%;
+    left: 10%;
+    right: 10%;
+    bottom: 3%;
+    height: 500px;
+    width: 25rem;
+    border-radius: 0 10px 10px 0;
+    -ms-overflow-style: none;
+  }
+}
+@media (max-width: 910px) {
+  .RightCommentPage {
+    display: none;
+  }
 }
 
 .MyFollowingCheck {
   font-size: 14px;
   font-weight: 700;
-  margin: 0 0 0 -220px;
+  margin: 0 0 0 -230px;
+}
+@media (max-width: 1400px) {
+  .MyFollowingCheck {
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0 0 0 -160px;
+  }
+}
+@media (max-width: 1000px) {
+  .MyFollowingCheck {
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0 0 0 -130px;
+  }
 }
 
 .MoreButton {
@@ -46,7 +295,7 @@
   display: flex;
   justify-content: space-between;
   align-content: center;
-  margin: 0 0 20px 5px;
+  margin: 0 0 10px 5px;
 }
 
 .UserComment {
@@ -55,13 +304,67 @@
   align-content: center;
   margin: 2.5px 10px 0 0;
 }
+@media (max-width: 1400px) {
+  .UserComment {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    margin: 0 15px 0 0;
+  }
+}
+@media (max-width: 1120px) {
+  .UserComment {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    margin: 0 15px 0 0;
+  }
+}
+
+.UserCommentContent {
+  margin: 20px 0 0 10px;
+  font-size: 15px;
+}
+@media (max-width: 1400px) {
+  .UserCommentContent {
+    margin: 35px 0 0 10px;
+    font-size: 14px;
+  }
+}
+@media (max-width: 1120px) {
+  .UserCommentContent {
+    margin: 20px 0 0 10px;
+    font-size: 13px;
+  }
+}
 
 .CommnetCreatedAt {
-  margin: 22px 20px 0 0px;
+  margin: 25px 20px 0 0px;
   font-size: 13px;
   width: auto;
   color: gray;
   white-space: nowrap;
+  word-wrap: break-word;
+}
+@media (max-width: 1400px) {
+  .CommnetCreatedAt {
+    margin: 40px 20px 0 0px;
+    font-size: 13px;
+    width: auto;
+    color: gray;
+    white-space: nowrap;
+    word-wrap: break-word;
+  }
+}
+@media (max-width: 1120px) {
+  .CommnetCreatedAt {
+    margin: 23px 20px 0 0px;
+    font-size: 12px;
+    width: auto;
+    color: gray;
+    white-space: nowrap;
+    word-wrap: break-word;
+  }
 }
 
 .CommentFooter {
