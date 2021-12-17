@@ -54,7 +54,6 @@ const getCommentDB = (postId) => {
     if (!postId) {
       return
     }
-
     apis
       .commentList(postId)
       .then((response) => {
@@ -66,10 +65,10 @@ const getCommentDB = (postId) => {
   }
 }
 
-const addCommentDB = (postId, commentlist) => {
+const addCommentDB = (postId, comment) => {
   return async function (dispatch, getState, { history }) {
     await apis
-      .addComment(postId, commentlist)
+      .addComment(postId, comment)
       .then((response) => {
         console.log(response.data.comment)
         dispatch(addComment(postId, response.data.comment))

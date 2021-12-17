@@ -6,6 +6,7 @@ import moment from 'moment'
 //modules//
 import { actionCreators as imageActions } from './image'
 import { apis } from '../../shared/api'
+import axios from 'axios'
 
 //action types//
 const GET_POST = 'GET_POST'
@@ -17,7 +18,7 @@ const LOADING = 'LOADING'
 //actioncreators
 const getPost = createAction(GET_POST, (postlist) => ({ postlist }))
 const addPost = createAction(ADD_POST, (post) => ({ post }))
-const editPost = createAction(EDIT_POST, (postId, newContents) => ({ postId, newContents }))
+const editPost = createAction(EDIT_POST, (postId, newPost) => ({ postId, newPost }))
 const deletePost = createAction(DELETE_POST, (postId) => ({ postId }))
 const loading = createAction(LOADING, (is_loading) => ({ is_loading }))
 
@@ -63,35 +64,67 @@ const getPostDB = (start = null, size = 3) => {
     if (_paging.start && !_paging.next) {
       return
     }
-    dispatch(loading(true)) //무한스크롤 기능 구현 필요
+    dispatch(loading(true))
 
     try {
-      const post_list = await apis.postList()
+      const postlist = await apis.postList()
 
-      dispatch(getPost(post_list.data))
+      dispatch(getPost(postlist.data))
 
-      dispatch(imageActions.setPreview(null))
+      // dispatch(imageActions.setPreview(null))
     } catch (error) {
       console.log('게시글을 불러오는데 실패했습니다.', error)
     }
   }
 }
 
-const addPostDB = (filename, content) => {
+const addPostDB = (content, formData) => {
   return async function (dispatch, getState, { history }) {
-    console.log(content)
-    apis
-      .addPost(filename, content)
-      .then((res) => {
-        dispatch(addPost(res.data.post))
-        dispatch(imageActions.setPreview(null))
+    try {
+      const userId = getState().user.userId
+      const nickname = getState().user.nickname
+      const imgUrl = getState().image.preview
+      const content = getState().post.content
+      const likeCnt = getState().post.likeCnt
+      const commentCnt = getState().post.likeCnt
+      const createAt = getState().post.createAt
+      const updateAt = getState().post.updateAt
+
+      const _post = {
+        ...initialPost,
+        userId: userId,
+        nickname: nickname,
+        imgUrl: imgUrl,
+        content: content,
+        likeCnt: likeCnt,
+        commentCnt: commentCnt,
+        createAt: createAt,
+        updateAt: updateAt,
+      }
+
+      axios({
+        method: 'post',
+        url: 'http://13.125.149.78/api/postlist',
+        data: formData,
+        headers: {
+          'Content-Type': 'multipart/form-data',
+          'Access-Control-Allow-Origin': '*',
+          Authorization: `Bearer ${sessionStorage.getItem('token')};`,
+        },
       })
-      .catch((error) => {
-        console.log('게시글 작성에 문제가 발생했습니다.', error)
-      })
-      .then(() => {
-        history.replace('/main')
-      })
+        .then((response) => {
+          dispatch(addPost(response.data))
+          dispatch(imageActions.setPreview(null))
+        })
+        .catch((error) => {
+          console.log('게시글 작성에 문제가 발생했습니다.', error)
+        })
+        .then(() => {
+          history.replace('/main')
+        })
+    } catch (err) {
+      console.error('게시물 업로드 문제 발생', err)
+    }
   }
 }
 
