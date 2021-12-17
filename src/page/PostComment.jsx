@@ -5,9 +5,13 @@ import UserNameTag from '../components/UserNameTag'
 import MenuModal from '../components/MenuModal'
 import { Grid, Image, Text, Spinner } from '../elements'
 import { history } from '../redux/configureStore'
+import { actionCreators as postActions } from '../redux/modules/post'
+import SentimentSatisfiedOutlinedIcon from '@mui/icons-material/SentimentSatisfiedOutlined'
 import FavoriteRoundedIcon from '@mui/icons-material/FavoriteRounded'
 import MiniCommentButton from '../shared/icon/insta_comment.png'
 import MiniShareButton from '../shared/icon/insta_share.png'
+import CommentButton from '../shared/icon/insta_comment.png'
+import ShareButton from '../shared/icon/insta_share.png'
 import { BiBookmark } from 'react-icons/bi'
 import MoreHorizOutlinedIcon from '@mui/icons-material/MoreHorizOutlined'
 import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined'
@@ -15,6 +19,8 @@ import BasicProfile from '../shared/icon/originalLogo.png'
 
 const PostComment = (props) => {
   const dispatch = useDispatch()
+  const [content, setContent] = React.useState()
+  const [image, setImage] = React.useState()
 
   const [modalOpen, setModalOpen] = useState(false)
   const openModal = () => {
@@ -28,6 +34,10 @@ const PostComment = (props) => {
       setModalOpen(true)
     }
   })
+
+  const addComment = () => {
+    dispatch(postActions.addCommentDB(content, image))
+  }
 
   return (
     <>
@@ -44,10 +54,10 @@ const PostComment = (props) => {
               <img size="800" src="https://www.hidomin.com/news/photo/202105/453232_224470_4025.jpg" />
             </div>
             <div>
-              <FavoriteRoundedIcon className="MiniPostCardLikeButton" />
-              {/* <MiniCommentButton className="MiniPostCardCommentButton" /> */}
-              {/* <MiniShareButton className="MiniPostCardShareButton" /> */}
-              <BiBookmark className="MiniPostCardBookmarkButton" />
+              <FavoriteRoundedIcon className="MiniPostCardLikeButton" fontSize="5" />
+              <img src={MiniCommentButton} className="MiniPostCardCommentButton" fontSize="5" />
+              <img src={MiniShareButton} className="MiniPostCardShareButton" fontSize="5" />
+              <BiBookmark className="MiniPostCardBookmarkButton" fontSize="5" />
             </div>
             <text className="MiniPostCardLikeCnt">좋아요 15,512개</text>
             <text className="MiniPostCardcreatedAt">31분 전</text>
@@ -67,59 +77,109 @@ const PostComment = (props) => {
               31분 전
             </Text>
             <hr className="Contour" />
-            <div className="PostCommentList">
-              <div className="UserComment">
-                <UserNameTag />
-                <text className="UserCommentContent" margin="25px 10px 0 10px">
-                  is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글{' '}
-                </text>
+            <div className="AllUserCommentList">
+              <div className="PostCommentList">
+                <div className="UserComment">
+                  <UserNameTag />
+                  <text className="UserCommentContent" margin="25px 10px 0 10px">
+                    is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글{' '}
+                  </text>
+                </div>
+                <div className="CommnetCreatedAt">3시간 전</div>
               </div>
-              <div className="CommnetCreatedAt">3시간 전</div>
+              <div className="PostCommentList">
+                <div className="UserComment">
+                  <UserNameTag />
+                  <text className="UserCommentContent" margin="25px 10px 0 10px">
+                    is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글{' '}
+                  </text>
+                </div>
+                <div className="CommnetCreatedAt">3시간 전</div>
+              </div>
+              <div className="PostCommentList">
+                <div className="UserComment">
+                  <UserNameTag />
+                  <text className="UserCommentContent" margin="25px 10px 0 10px">
+                    is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글{' '}
+                  </text>
+                </div>
+                <div className="CommnetCreatedAt">3시간 전</div>
+              </div>
+              <div className="PostCommentList">
+                <div className="UserComment">
+                  <UserNameTag />
+                  <text className="UserCommentContent" margin="25px 10px 0 10px">
+                    is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글{' '}
+                  </text>
+                </div>
+                <div className="CommnetCreatedAt">3시간 전</div>
+              </div>
+              <div className="PostCommentList">
+                <div className="UserComment">
+                  <UserNameTag />
+                  <text className="UserCommentContent" margin="25px 10px 0 10px">
+                    is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글{' '}
+                  </text>
+                </div>
+                <div className="CommnetCreatedAt">3시간 전</div>
+              </div>
+              <div className="PostCommentList">
+                <div className="UserComment">
+                  <UserNameTag />
+                  <text className="UserCommentContent" margin="25px 10px 0 10px">
+                    is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글{' '}
+                  </text>
+                </div>
+                <div className="CommnetCreatedAt">3시간 전</div>
+              </div>
+              <div className="PostCommentList">
+                <div className="UserComment">
+                  <UserNameTag />
+                  <text className="UserCommentContent" margin="25px 10px 0 10px">
+                    is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글{' '}
+                  </text>
+                </div>
+                <div className="CommnetCreatedAt">3시간 전</div>
+              </div>
+              <div className="PostCommentList">
+                <div className="UserComment">
+                  <UserNameTag />
+                  <text className="UserCommentContent" margin="25px 10px 0 10px">
+                    is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글{' '}
+                  </text>
+                </div>
+                <div className="CommnetCreatedAt">3시간 전</div>
+              </div>
+              <div className="PostCommentList">
+                <div className="UserComment">
+                  <UserNameTag />
+                  <text className="UserCommentContent" margin="25px 10px 0 10px">
+                    is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글{' '}
+                  </text>
+                </div>
+                <div className="CommnetCreatedAt">3시간 전</div>
+              </div>
             </div>
-            <div className="PostCommentList">
-              <div className="UserComment">
-                <UserNameTag />
-                <text className="UserCommentContent" margin="25px 10px 0 10px">
-                  is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글{' '}
-                </text>
-              </div>
-              <div className="CommnetCreatedAt">3시간 전</div>
+            <hr className="CommentContour" />
+            <div className="DetailSnsButtons">
+              {/* <Like /> */}
+              <FavoriteRoundedIcon className="DetailLikeButton" fontSize="5" />
+              <img className="DetailPostCommentButton" src={CommentButton} onClick={() => history.push('/main/postComment')} />
+              <img className="DetailPostShareButton" src={ShareButton} />
+              <BiBookmark className="DetailBookMarkButton" fontSize="5" />
             </div>
-            <div className="PostCommentList">
-              <div className="UserComment">
-                <UserNameTag />
-                <text className="UserCommentContent" margin="25px 10px 0 10px">
-                  is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글{' '}
-                </text>
-              </div>
-              <div className="CommnetCreatedAt">3시간 전</div>
-            </div>
-            <div className="PostCommentList">
-              <div className="UserComment">
-                <UserNameTag />
-                <text className="UserCommentContent" margin="25px 10px 0 10px">
-                  is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글{' '}
-                </text>
-              </div>
-              <div className="CommnetCreatedAt">3시간 전</div>
-            </div>
-            <div className="PostCommentList">
-              <div className="UserComment">
-                <UserNameTag />
-                <text className="UserCommentContent" margin="25px 10px 0 10px">
-                  is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글{' '}
-                </text>
-              </div>
-              <div className="CommnetCreatedAt">3시간 전</div>
-            </div>
-            <div className="PostCommentList">
-              <div className="UserComment">
-                <UserNameTag />
-                <text className="UserCommentContent" margin="25px 10px 0 10px">
-                  is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글{' '}
-                </text>
-              </div>
-              <div className="CommnetCreatedAt">3시간 전</div>
+            <text className="DetailLikeCnt">좋아요 15,628개</text>
+            <hr className="DetailCommentContour" />
+            <div className="FixedCommentSection">
+              <Grid is_flex>
+                <SentimentSatisfiedOutlinedIcon className="DetailSmileButton" fontSize="5" />
+                <input className="DetailCommentInputBox" placeholder="댓글 달기..." multiLine value={content}>
+                  {props.content}
+                </input>
+                <button className="DetailCommentAddButton" onClick={addComment}>
+                  게시
+                </button>
+              </Grid>
             </div>
           </div>
         </div>
