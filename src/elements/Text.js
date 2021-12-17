@@ -25,9 +25,9 @@ Text.defaultProps = {
   margin: false,
   size: '',
   weight: false,
-  align: 'false',
-  fontWeight: false,
-}
+  align: "false",
+  fontWeight: "",
+};
 
 const P = styled.p`
   color: ${(props) => props.color};

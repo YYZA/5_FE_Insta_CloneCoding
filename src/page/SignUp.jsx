@@ -25,14 +25,18 @@ const SiginUp = () => {
     }
 
     axios
-      .post('http://13.125.149.78/api/userlist/register', {
+      .post("http://13.125.149.78/api/userlist/register", {
         userId: data.email,
         nickname: data.nickname,
         password: data.password,
         passwordCheck: data.passwordCheck,
       })
-      .then((res) => history.push('/'))
-  }
+      .then((res) => history.push("/"))
+      .catch((err) => {
+        alert(err.response.data.errorMessage);
+      });
+  };
+
   return (
     <div
       style={{
