@@ -25,7 +25,7 @@ const SiginUp = () => {
     }
 
     axios
-      .post('https://a2efb73a-f81e-4000-821c-301da28a914a.mock.pstmn.io/api/userlist/register', {
+      .post('http://13.125.149.78/api/userlist/register', {
         userId: data.email,
         nickname: data.nickname,
         password: data.password,

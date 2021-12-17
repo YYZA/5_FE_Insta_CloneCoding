@@ -49,6 +49,7 @@
   }
 }
 
+/* 910px 이하 작은 포스트카드 화면 */
 .MiniPostCard {
   background-color: none;
   width: none;
@@ -126,8 +127,40 @@
   .MiniPostCardLikeButton {
     display: flex;
     justify-content: space-between;
-    font-size: 40px;
+    font-size: 35px;
     margin: 10px 0 0 10px;
+    color: red;
+  }
+}
+
+.MiniPostCardCommentButton {
+  display: none;
+}
+.MiniPostCardCommentButton:hover {
+  cursor: pointer;
+}
+@media (max-width: 910px) {
+  .MiniPostCardCommentButton {
+    display: flex;
+    justify-content: space-between;
+    width: 45px;
+    margin: -43px 0 0 50px;
+    color: red;
+  }
+}
+
+.MiniPostCardShareButton {
+  display: none;
+}
+.MiniPostCardShareButton:hover {
+  cursor: pointer;
+}
+@media (max-width: 910px) {
+  .MiniPostCardShareButton {
+    display: flex;
+    justify-content: space-between;
+    width: 45px;
+    margin: -47px 0 0 90px;
     color: red;
   }
 }
@@ -143,7 +176,7 @@
     display: flex;
     justify-content: space-between;
     font-size: 35px;
-    margin: -35px 0 0 355px;
+    margin: -38px 0 0 355px;
   }
 }
 
@@ -173,6 +206,7 @@
     color: rgba(0, 0, 0, 0.6);
   }
 }
+/* 910px 이하 작은 포스트카드 화면 */
 
 .PostImage {
   width: 40rem;
@@ -218,13 +252,8 @@
   height: 800px;
   width: 30rem;
   border-radius: 0 10px 10px 0;
-  overflow-y: auto;
-  overflow-x: hidden;
-  -ms-overflow-style: none;
 }
-.RightCommentPage::-webkit-scrollbar {
-  display: none;
-}
+
 @media (max-width: 1400px) {
   .RightCommentPage {
     top: 5%;
@@ -289,6 +318,40 @@
 .Contour {
   border: 0.1px solid rgba(0, 0, 0, 0.1);
   width: 100%;
+}
+
+.AllUserCommentList {
+  width: auto;
+  height: 450px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  -ms-overflow-style: none;
+}
+.AllUserCommentList::-webkit-scrollbar {
+  display: none;
+}
+@media (max-width: 1400px) {
+  .AllUserCommentList {
+    width: auto;
+    height: 300px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    -ms-overflow-style: none;
+  }
+}
+@media (max-width: 1120px) {
+  .AllUserCommentList {
+    width: auto;
+    height: 200px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    -ms-overflow-style: none;
+  }
+}
+@media (max-width: 910px) {
+  .AllUserCommentList {
+    display: none;
+  }
 }
 
 .PostCommentList {
@@ -367,52 +430,180 @@
   }
 }
 
-.CommentFooter {
+/* 디테일 페이지 좋아요, 댓글, 공유, 북마크 버튼 */
+.DetailSnsButtons {
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+  margin: 0 0 10px 0;
+}
+@media (max-width: 1400px) {
+  .DetailSnsButtons {
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    margin: -5px 0 0 0;
+  }
+}
+@media (max-width: 1120px) {
+  .DetailSnsButtons {
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    margin: -10px 0 0 0;
+  }
+}
+
+.DetailLikeButton {
+  font-size: 30px;
+  margin: 5px 10px 0px 10px;
+  color: crimson;
+}
+.DetailLikeButton:hover {
+  cursor: pointer;
+}
+
+.DetailPostCommentButton {
+  width: 35px;
+  height: 35px;
+  margin: 2px 10px 0 0;
+}
+.DetailPostCommentButton:hover {
+  cursor: pointer;
+}
+
+.DetailPostShareButton {
+  width: 35px;
+  height: 35px;
+  margin: 1px 10px 0 0;
+}
+.DetailPostShareButton:hover {
+  cursor: pointer;
+}
+
+.DetailBookMarkButton {
+  font-size: 30px;
+  margin: 5px 0 0 295px;
+}
+.DetailBookMarkButton:hover {
+  cursor: pointer;
+}
+
+.DetailLikeCnt {
+  font-size: 15px;
+  font-weight: 400;
+  margin: 40px 0 0 20px;
+}
+@media (max-width: 1400px) {
+  .DetailLikeCnt {
+    font-size: 14px;
+    font-weight: 400;
+    margin: 40px 0 -10px 20px;
+  }
+}
+@media (max-width: 1120px) {
+  .DetailLikeCnt {
+    font-size: 13px;
+    font-weight: 400;
+    margin: 40px 0 -10px 20px;
+  }
+}
+/* 디테일 페이지 좋아요, 댓글, 공유, 북마크 버튼 */
+
+.FixedCommentSection {
   position: sticky;
   max-width: 600px;
   min-width: 300px;
-  margin: 0 0 0 0;
+  margin: 60px 0 0 0;
   padding: 0 0 5px 0;
   bottom: -0.5rem;
   left: 12.55rem;
   justify-content: space-between;
   align-content: center;
-  border: 0.5px solid hsla(0, 0%, 50%, 0.3);
-}
-
-.AddCommentSection {
   display: flex;
-  justify-content: space-between;
-  align-content: center;
-  margin: 0;
-  padding: 20px 0 2px 0;
-  position: sticky;
-  background: white;
 }
 
-.CommentInput {
-  width: 100%;
-  border: 0.5px solid rgba(0, 0, 0, 0.2);
-  border-radius: 30px;
-  padding: 0 50px 0 15px;
-  margin: 5px 15px 5px 5px;
-  flex-wrap: wrap;
-  font-size: 1rem;
+.DetailCommentContour {
+  border: 0;
+  height: 0.1px;
+  width: 99.5%;
+  margin: 45px 0 -50px 0;
+  background-color: rgba(0, 0, 0, 0.1);
 }
-.CommentInput:focus {
+@media (max-width: 1400px) {
+  .DetailCommentContour {
+    border: 0;
+    height: 0.1px;
+    width: 99.5%;
+    margin: 15px 0 -55px 0;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+}
+@media (max-width: 1120px) {
+  .DetailCommentContour {
+    border: 0;
+    height: 0.1px;
+    width: 99.5%;
+    margin: 15px 0 -50px 0;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+}
+@media (max-width: 910px) {
+  .DetailCommentContour {
+    display: none;
+  }
+}
+
+.DetailSmileButton {
+  font-size: 35px;
+  font-weight: 300;
+  margin: 0 0 10px 10px;
+}
+
+.DetailCommentInputBox {
+  width: 30rem;
+  height: auto;
+  margin: 0 10px 11px 10px;
+  overflow-wrap: normal;
+  border: none;
+  font-size: 15px;
+}
+.DetailCommentInputBox:focus {
   outline: none;
 }
 
-.AddCommentButton {
-  position: absolute;
-  bottom: 1.05rem;
-  right: 1.7rem;
+.DetailCommentAddButton {
+  width: 50px;
+  margin: 0 10px 7px 0;
+  color: rgb(0, 145, 255);
+  font-size: 15px;
+  font-weight: bold;
   border: none;
   background: none;
-  color: rgb(0, 133, 174);
-  font-size: 1rem;
-  font-weight: bold;
 }
-.AddCommentButton:hover {
+.DetailCommentAddButton:hover {
   cursor: pointer;
+}
+@media (max-width: 1400px) {
+  .DetailCommentAddButton {
+    width: 50px;
+    margin: 0 10px 0 0;
+    color: rgb(0, 145, 255);
+    font-size: 13px;
+    font-weight: bold;
+    border: none;
+    background: none;
+    flex-wrap: nowrap;
+  }
+}
+@media (max-width: 1120px) {
+  .DetailCommentAddButton {
+    width: 50px;
+    margin: 0 10px 7px 0;
+    color: rgb(0, 145, 255);
+    font-size: 13px;
+    font-weight: bold;
+    border: none;
+    background: none;
+  }
 }

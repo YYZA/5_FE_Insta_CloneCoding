@@ -7,9 +7,11 @@ import Like from '../components/Like'
 import { Grid, Image, Text } from '../elements'
 import { history } from '../redux/configureStore'
 import { actionCreators as postActions } from '../redux/modules/post'
+import { actionCreators as commentActions } from '../redux/modules/comment'
 import MoreHorizOutlinedIcon from '@mui/icons-material/MoreHorizOutlined'
 import FavoriteBorderRoundedIcon from '@mui/icons-material/FavoriteBorderRounded'
 import FavoriteRoundedIcon from '@mui/icons-material/FavoriteRounded'
+import SentimentSatisfiedOutlinedIcon from '@mui/icons-material/SentimentSatisfiedOutlined'
 import { BiBookmark } from 'react-icons/bi'
 import CommentButton from '../shared/icon/insta_comment.png'
 import ShareButton from '../shared/icon/insta_share.png'
@@ -19,17 +21,16 @@ import moment from 'moment'
 
 const PostCard = (props) => {
   const dispatch = useDispatch()
-
   const data = useSelector((state) => state.user.user)
-  const post_data = useSelector((state) => state.post.list)
+  const postData = useSelector((state) => state.post.list)
   const token = sessionStorage.getItem('token')
   React.useEffect(() => {
     // 현재 리덕스의 게시글 데이터가 1개 이하일 경우 서버에서 게시글 정보를 가져옴
-    if (post_data.length < 2) {
+    if (postData.length < 2) {
       dispatch(postActions.getPostDB(token, history))
     }
   }, [])
-  console.log(post_data)
+
   const a = props.updatedAt
   const day = moment(props.updatedAt).fromNow()
 
@@ -40,6 +41,8 @@ const PostCard = (props) => {
   const disLike = () => {
     setLike(false)
   }
+  const [content, setContent] = React.useState()
+  const [image, setImage] = React.useState()
 
   const [modalOpen, setModalOpen] = useState(false)
   const openModal = () => {
@@ -53,6 +56,18 @@ const PostCard = (props) => {
       setModalOpen(true)
     }
   })
+
+  const changeContent = (e) => {
+    setContent(e.target.value)
+  }
+
+  const changeImage = (file) => {
+    setImage(file)
+  }
+
+  const addComment = () => {
+    dispatch(postActions.addCommentDB(content, image))
+  }
 
   const deletePost = () => {
     if (window.confirm('게시글을 삭제하시겠습니까?')) {
@@ -99,6 +114,16 @@ const PostCard = (props) => {
           <div className="CommentContent">어? 이쁘다</div>
         </div>
         <div className="CreatedAt">31분 전</div>
+        <hr className="CommentContour" />
+        <Grid is_flex>
+          <SentimentSatisfiedOutlinedIcon className="SmileButton" fontSize="5" />
+          <input className="CommentInputBox" placeholder="댓글 달기..." multiLine value={content}>
+            {props.content}
+          </input>
+          <button className="CommentAddButton" onClick={addComment}>
+            게시
+          </button>
+        </Grid>
       </div>
       <MenuModal open={modalOpen} close={closeModal} header={'123'} />
     </>

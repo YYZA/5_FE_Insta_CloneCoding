@@ -1,31 +1,27 @@
 import axios from 'axios'
+import { getCookie, deleteCookie } from './Cookie'
+
+const cookie = getCookie('authCookie')
 
 const api = axios.create({
   baseURL: 'http://13.125.149.78',
   headers: {
     'X-Requested-With': 'XMLHttpRequest',
-    'Content-type': 'application/json',
-    charset: 'UTF-8',
+    'content-type': 'multipart/form-data; boundary=Uee--r1_eDOWu7FpA0LJdLwCMLJQapQGu',
+    'Access-Control-Allow-Origin': '*',
     accept: 'application/json',
+    Authorization: cookie,
   },
 })
-//header에 쿠키 자체를 담아서 보내도록 수정
 
-document.cookie = 'authCookie = '
-
-// setCookie('authCookie', '', '1')
-
-// const cookies = getCookie("authCookie")
-//
-
-api.interceptors.request.use((config) => {
-  const accessToken = document.cookie.split('=')[1]
-  config.headers.common['authorization'] = `${accessToken}`
-  return config
-})
+// api.interceptors.request.use((config) => {
+//   const accessToken = document.cookie.split('=')[1]
+//   'Authorization'= `Bearer ${accessToken}`
+//   return config
+// })
 
 export const apis = {
-  addPost: (content) => api.post('/api/postlist', content),
+  addPost: (post) => api.post('/api/postlist', post),
   editPost: (postId, newPost) => api.put(`/api/postlist/${postId}`, newPost),
   deletePost: (postId) => api.delete(`/api/postlist/${postId}`),
   postList: () => api.get('/api/postlist'),

@@ -198,20 +198,34 @@
 .InputGuideText {
   font-size: 25px;
   font-weight: 300;
-  margin: 0 0 250px 120px;
+  margin: 0 0 250px 0px;
 }
 
-.ImageInputButton {
-  margin: 10px 0 0 135px;
-  width: 120px;
-  height: 30px;
+.InputLabelText {
+  font-size: 25px;
+  font-weight: 300;
+}
+
+.UploadFileBox label {
+  display: inline-block;
+  padding: 0.3rem 1rem;
+  margin: 10px 0 0 120px;
+  color: rgb(255, 255, 255);
   font-size: 15px;
   font-weight: 700;
-  color: white;
-  background-color: rgb(0, 166, 255);
-  border: none;
-  border-radius: 5px;
-}
-.ImageInputButton:hover {
+  line-height: normal;
+  vertical-align: middle;
+  background-color: #00a6ff;
   cursor: pointer;
+  border-radius: 0.3rem;
+}
+.UploadFileBox input[tyle='file'] {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
