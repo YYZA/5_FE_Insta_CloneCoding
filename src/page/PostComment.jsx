@@ -20,6 +20,7 @@ import BasicProfile from '../shared/icon/originalLogo.png'
 
 const PostComment = (props) => {
   const postList = useSelector((state) => state.postlist.list)
+  const commentList = useSelector((state) => state.commentlist.list)
   const postlist = props
 
   const createdAt = postlist.createdAt
