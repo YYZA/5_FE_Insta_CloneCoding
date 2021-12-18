@@ -1,4 +1,4 @@
-# 🌠 인스타그램 클론 코딩 - Backend
+# 🌠 인스타그램 클론 코딩 - Frontend
 인스타그램 클론 코딩 프로젝트  
 <br/>
 [**[Fornt-End]**](https://github.com/undriedspring/5_FE_Insta_CloneCoding) 프론트엔트 Github 페이지
