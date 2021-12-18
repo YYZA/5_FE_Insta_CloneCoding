@@ -1,7 +1,7 @@
 # 🌠 인스타그램 클론 코딩 - Frontend
 인스타그램 클론 코딩 프로젝트  
 <br/>
-[**[Fornt-End]**](https://github.com/undriedspring/5_FE_Insta_CloneCoding) 프론트엔트 Github 페이지
+[**[Back-End]**](https://github.com/IsthisLee/Insta-clone) 백엔드 Github 페이지
 <br/>
 [**[Demo Video]**] 인스타그램 클론 사이트 시연 영상
 
