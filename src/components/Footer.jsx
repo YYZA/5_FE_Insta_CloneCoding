@@ -1,12 +1,19 @@
 import React from 'react'
 import '../css/Footer.css'
+import { useDispatch, useSelector } from 'react-redux'
 import { Grid, Image, Text } from '../elements'
 import FaceIcon from '@mui/icons-material/Face'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import UserNameTag from './UserNameTag'
 import BasicProfile from '../shared/icon/originalLogo.png'
 
-const Footer = () => {
+const Footer = (props) => {
+  const dispatch = useDispatch()
+  const postList = useSelector((state) => state.postlist.list)
+  const nickname = postList.nickname
+  const userId = postList.userId
+
+  console.log(postList)
   const members = [
     {
       src: 'https://kimkong2.s3.ap-northeast-2.amazonaws.com/avatar-dQCYs4n7O99ksXuBIe33-7i6cgyRhMHo2yv48rq19-yFpcQh7UcvdChVN8WvIW-iDeY4KaGvVDVSxCv46Bg-gOLxmc6a6kx5l0AM6k1f-qU1toWj69nUqJJ6wJjRx.png',
@@ -51,11 +58,11 @@ const Footer = () => {
       <div className="FooterLayout">
         <Grid is_flex>
           <div className="MyNameTag">
-            <Grid is_flex border="1px solid green" width="200px">
+            <Grid is_flex width="200px">
               <Image src={BasicProfile} shape="circle" size="55"></Image>
               <div className="MyAccountInfo">
-                <text className="MyAccountNickname">123456789012345</text>
-                <text className="MyName">이한샘</text>
+                <text className="MyAccountNickname">{nickname}</text>
+                <text className="MyName">{userId}</text>
               </div>
             </Grid>
             <div className="ChangeAccountSection">

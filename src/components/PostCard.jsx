@@ -20,19 +20,35 @@ import 'moment/locale/ko'
 import moment from 'moment'
 
 const PostCard = (props) => {
+  const postList = useSelector((state) => state.postlist.list)
+  const postlist = props
+
+  const createdAt = postlist.createdAt.split('T')[1].split(':')[0]
+  const imgUrl = postlist.imgUrl.split(',')
+  const nickname = postlist.nickname
+  const content = postlist.content
+  const commentCnt = postlist.commentCnt
+  const postId = postlist.postId
+
   const dispatch = useDispatch()
-  const data = useSelector((state) => state.user.user)
-  const postData = useSelector((state) => state.post.list)
-  const token = sessionStorage.getItem('token')
+
+  const [getComment, setGetComment] = useState('')
+
   React.useEffect(() => {
-    // 현재 리덕스의 게시글 데이터가 1개 이하일 경우 서버에서 게시글 정보를 가져옴
-    if (postData.length < 2) {
-      dispatch(postActions.getPostDB(token, history))
-    }
+    dispatch(commentActions.getCommentDB(postId))
   }, [])
 
-  const a = props.updatedAt
-  const day = moment(props.updatedAt).fromNow()
+  const onChange = (e) => {
+    setGetComment(e.target.value)
+  }
+
+  const write = () => {
+    const commentlist = {
+      comment: getComment,
+    }
+    dispatch(commentActions.addCommentDB(postId, commentlist))
+    setGetComment('')
+  }
 
   const [like, setLike] = useState(false)
   const myLike = () => {
@@ -41,8 +57,10 @@ const PostCard = (props) => {
   const disLike = () => {
     setLike(false)
   }
-  const [content, setContent] = React.useState()
-  const [image, setImage] = React.useState()
+
+  const day = moment(createdAt).fromNow()
+
+  console.log(day)
 
   const [modalOpen, setModalOpen] = useState(false)
   const openModal = () => {
@@ -57,21 +75,9 @@ const PostCard = (props) => {
     }
   })
 
-  const changeContent = (e) => {
-    setContent(e.target.value)
-  }
-
-  const changeImage = (file) => {
-    setImage(file)
-  }
-
-  const addComment = () => {
-    dispatch(postActions.addCommentDB(content, image))
-  }
-
   const deletePost = () => {
     if (window.confirm('게시글을 삭제하시겠습니까?')) {
-      return dispatch(postActions.deletePostDB(props.id))
+      return dispatch(postActions.deletePostDB(postList.id))
     } else {
       return
     }
@@ -81,12 +87,14 @@ const PostCard = (props) => {
     <>
       <div className="Container">
         <Grid is_flex>
-          <UserNameTag />
+          <UserNameTag>{nickname}</UserNameTag>
           <MoreHorizOutlinedIcon className="MoreButton" onClick={openModal} />
         </Grid>
-        <Image size="600" src="https://www.hidomin.com/news/photo/202105/453232_224470_4025.jpg" />
+        {/* <Image size="600" src="https://www.hidomin.com/news/photo/202105/453232_224470_4025.jpg" /> */}
+        <div className="PostImgBox">
+          <Image size="590" src={imgUrl} />
+        </div>
         <div className="SnsButtons">
-          {/* <Like /> */}
           <FavoriteRoundedIcon className="LikeButton" fontSize="5" onClick={myLike} />
           <img className="PostCommentButton" src={CommentButton} onClick={() => history.push('/main/postComment')} />
           <img className="PostShareButton" src={ShareButton} />
@@ -94,12 +102,12 @@ const PostCard = (props) => {
         </div>
         <div className="ContentSection">
           <div className="DescriptioncUserName" onClick={() => history.push('/profile')}>
-            dlwlrma
+            {nickname}
           </div>
-          <div className="DescriptionContent">💜안녕하세요</div>
+          <div className="DescriptionContent">{content}</div>
         </div>
-        <div className="CommentCnt" onClick={() => history.push('/main/postComment')}>
-          댓글 45,241개 모두 보기
+        <div className="CommentCnt" onClick={() => history.push('/main/postComment/:postid')}>
+          댓글 {commentCnt}개 모두 보기
         </div>
         <div className="CommentSection">
           <div className="CommentUserName" onClick={() => history.push('/profile')}>
@@ -107,20 +115,12 @@ const PostCard = (props) => {
           </div>
           <div className="CommentContent">아이유</div>
         </div>
-        <div className="CommentSection">
-          <div className="CommentUserName" onClick={() => history.push('/profile')}>
-            stuffed_cow
-          </div>
-          <div className="CommentContent">어? 이쁘다</div>
-        </div>
-        <div className="CreatedAt">31분 전</div>
+        <div className="CreatedAt">{day}</div>
         <hr className="CommentContour" />
         <Grid is_flex>
           <SentimentSatisfiedOutlinedIcon className="SmileButton" fontSize="5" />
-          <input className="CommentInputBox" placeholder="댓글 달기..." multiLine value={content}>
-            {props.content}
-          </input>
-          <button className="CommentAddButton" onClick={addComment}>
+          <input className="CommentInputBox" placeholder="댓글 달기..." multiLine onChange={onChange} onSubmit={write}></input>
+          <button className="CommentAddButton" onClick={write}>
             게시
           </button>
         </Grid>

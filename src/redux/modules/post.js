@@ -1,5 +1,6 @@
 import { createAction, handleActions } from 'redux-actions'
 import { produce } from 'immer'
+import { getCookie } from '../../shared/Cookie'
 import 'moment'
 import 'moment/locale/ko'
 import moment from 'moment'
@@ -27,6 +28,7 @@ const initialState = {
   list: [],
   paging: { state: null, next: null, size: 3 },
   is_laoding: false,
+  preview: null,
 }
 
 const initialPost = [
@@ -57,29 +59,32 @@ const initialPost = [
 //middlewares//
 const getPostDB = (start = null, size = 3) => {
   return async function (dispatch, getState, { history }) {
-    let _paging = getState().post.paging
+    // let _paging = getState().postlist.paging
 
-    console.log(_paging)
+    // console.log(_paging.start)
 
-    if (_paging.start && !_paging.next) {
-      return
-    }
-    dispatch(loading(true))
+    // if (_paging.start && !_paging.next) {
+    //   return
+    // }
+    // dispatch(loading(true))
 
     try {
       const postlist = await apis.postList()
+      // console.log(postlist.data.postlist)
+      dispatch(getPost(postlist.data.postlist))
 
-      dispatch(getPost(postlist.data))
-
-      // dispatch(imageActions.setPreview(null))
+      dispatch(imageActions.setPreview(null))
     } catch (error) {
       console.log('게시글을 불러오는데 실패했습니다.', error)
     }
   }
 }
 
-const addPostDB = (content, formData) => {
+const addPostDB = (postlist) => {
   return async function (dispatch, getState, { history }) {
+    const cookie = getCookie('authCookie')
+    const user = getState().user.user
+
     try {
       const userId = getState().user.userId
       const nickname = getState().user.nickname
@@ -102,18 +107,27 @@ const addPostDB = (content, formData) => {
         updateAt: updateAt,
       }
 
-      axios({
-        method: 'post',
-        url: 'http://13.125.149.78/api/postlist',
-        data: formData,
+      let form = new FormData()
+      form.append('content', postlist.content)
+      form.append('file', postlist.image)
+
+      const headers = {
         headers: {
           'Content-Type': 'multipart/form-data',
           'Access-Control-Allow-Origin': '*',
-          Authorization: `Bearer ${sessionStorage.getItem('token')};`,
+          Authorization: cookie,
         },
-      })
+        withCredentials: true,
+      }
+      axios
+        .post(`http://13.125.149.78/api/postlist`, form, { headers: headers })
+
         .then((response) => {
-          dispatch(addPost(response.data))
+          console.log(response)
+          const postlist = {
+            ...user,
+          }
+          dispatch(addPost(response.data.postlist))
           dispatch(imageActions.setPreview(null))
         })
         .catch((error) => {
@@ -173,7 +187,7 @@ export default handleActions(
   {
     [GET_POST]: (state, action) =>
       produce(state, (draft) => {
-        draft.list = action.payload.post_list
+        draft.list = action.payload.postlist
 
         if (action.payload.paging) {
           draft.paging = action.payload.paging

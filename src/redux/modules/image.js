@@ -1,18 +1,24 @@
 import { createAction, handleActions } from 'redux-actions'
 import produce from 'immer'
 
-const SET_PREVIEW = 'SET_PREVIEW'
+const UPLOAD = 'image/UPLOAD'
+const PREVIEW = 'image/PREVIEW'
 
-const setPreview = createAction(SET_PREVIEW, (preview) => ({ preview }))
+const uploadImage = createAction(UPLOAD, (imgUrl) => ({ imgUrl }))
+const setPreview = createAction(PREVIEW, (preview) => ({ preview }))
 
 const initialState = {
-  image_url: '',
+  imgUrl: null,
   preview: null,
 }
 
 export default handleActions(
   {
-    [SET_PREVIEW]: (state, action) =>
+    [UPLOAD]: (state, action) =>
+      produce(state, (draft) => {
+        draft.imgUrl = action.payload.imgUrl
+      }),
+    [PREVIEW]: (state, action) =>
       produce(state, (draft) => {
         draft.preview = action.payload.preview
       }),
@@ -21,6 +27,7 @@ export default handleActions(
 )
 
 const actionCreators = {
+  uploadImage,
   setPreview,
 }
 
