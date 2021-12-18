@@ -39,6 +39,7 @@
   font-size: 12px;
   font-weight: 700;
   color: rgb(0, 157, 255);
+  margin: 0 0 0 30px;
 }
 .ChangeMyAccountButton:hover {
   cursor: pointer;
@@ -62,6 +63,7 @@
   display: flex;
   align-items: center;
   margin-left: 5px;
+  font-weight: 600;
 }
 
 .FollowButton {
@@ -70,6 +72,7 @@
   font-size: 13px;
   font-weight: 600;
   color: rgb(0, 157, 255);
+  text-decoration: none !important;
 }
 .FollowButton:hover {
   cursor: pointer;
