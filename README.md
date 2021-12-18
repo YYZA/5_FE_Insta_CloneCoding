@@ -1,70 +1,122 @@
-# Getting Started with Create React App
+# 🌠 인스타그램 클론 코딩 - Backend
+인스타그램 클론 코딩 프로젝트  
+<br/>
+[**[Fornt-End]**](https://github.com/rlagudals95/team3/) 프론트엔트 Github 페이지
+<br/>
+[**[Demo Video]**] 인스타그램 클론 사이트 시연 영상
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<br/>
 
-## Available Scripts
+👨‍💻 프로젝트 기간 & 팀원
+-------------  
+- 2021년 12월 13일 ~ 2021년 12월 18일
+- Front-End [이한샘](https://github.com/undriedspring), [김용성](https://github.com/YYZA)
+- Back-End [김형진](https://github.com/KIMHYEONGJIN5925), [이건희](https://github.com/IsthisLee)  
 
-In the project directory, you can run:
+<br/>
 
-### `yarn start`
+🎮 클론 인스타그램 기능  
+-------------  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- 로그인 및 회원가입 기능
+- 메인화면에서 다른 사람들이 올린 글 확인 가능
+- 글쓰기 기능을 통해 내가 찍은 사진을 공유
+- 댓글 기능을 통해 다양한 사람들과 소통
+- 프로필 페이지에서 내 정보를 확인
+- 좋아요 기능으로 다른 사람 글 추천
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<br/>
 
-### `yarn test`
+😀 사용한 패키지 및 CSS  
+-----------------
+- **express**  　　　=> 웹 프레임워크
+- **mongoose**　　=> 비관계형 데이터베이스인 Mongo DB를 편리하게 다룰 수 있는 ODM
+- **cors**　　=> cors 해결을 위한 응답 헤더를 쉽게 추가해주는 module
+- **nodemon**　　=> 파일 수정시 자동으로 서버를 재시작
+- **bcrypt**　　=> 데이터베이스에 저장할 비밀번호를 암호화
+- **multer**　　=> 프론트 엔드에서 보내주는 이미지 데이터(멀티파트 형식 데이터)를 받음
+- **aws-sdk**　　=> node.js에서 AWS를 사용
+- **multer-s3**　　=> AWS S3에 접근하여 이미지 데이터를 업로드
+- **jsonwebtoken**　　=> jwt 토큰을 이용한 로그인 기능을 구현
+- **cookie-parser**　　=> cookie를 가공해주어 편리하게 cookie의 data 사용 가능
+- **dotenv**　　=> 환경변수 파일을 외부에 만들고, 관리가 가능
+- **mongoose-sequence**　　=> db 에 data 추가 시 자동으로 idx값 생성
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+<br/>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+📨 폴더 구조  
+-----------------  
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<br/>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+Insta-clone
+├─ node_modules
+│  
+│  
+├─ middleWare
+│  └─ authUseCookie.js
+│  └─ multer.js
+│  
+│  
+├─ models
+│  ├─ schema
+│  └─ index.js
+│  └─ posts.js
+│  └─ comments.js
+│  └─ users.js
+│ 
+│  
+└─ app.js
+└─ package-lock.json
+└─ package.json
+└─ .gitignore
+└─ .env
+```
 
-### `yarn eject`
+<br/>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+💾 DB ERD
+-----------------
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<br/>
+<br/>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<p align="center"><img src=></p>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<br/>
 
-## Learn More
+📱 API
+-----------------
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<br/>
+<br/>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<p align="center"><img src=></p>
 
-### Code Splitting
+<br/>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+🛠 Trouble Shooting
+-----------------  
 
-### Analyzing the Bundle Size
+<br/>
+<br/>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+<details markdown ="1">
+<summary>첫번째 문제</summary>
+해결방법 블라블라
+</details>
+<details markdown ="2">
+<summary>2</summary>
+</details>
 
-### Making a Progressive Web App
+<br/>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+🛠 이번 프로젝트에서 보완하거나 아쉬웠던 점 
+-----------------  
 
-### Advanced Configuration
+<br/>
+<br/>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<br/>
