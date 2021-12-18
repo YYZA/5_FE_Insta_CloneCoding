@@ -23,13 +23,14 @@ const PostCard = (props) => {
   const postList = useSelector((state) => state.postlist.list)
   const postlist = props
 
-  const createdAt = postlist.createdAt.split('T')[1].split(':')[0]
-  const imgUrl = postlist.imgUrl.split(',')
+  const createdAt = postlist.createdAt
+  const imgUrl = postlist.imgUrl
   const nickname = postlist.nickname
   const content = postlist.content
   const commentCnt = postlist.commentCnt
   const postId = postlist.postId
 
+  console.log(createdAt)
   const dispatch = useDispatch()
 
   const [getComment, setGetComment] = useState('')
@@ -92,7 +93,7 @@ const PostCard = (props) => {
         </Grid>
         {/* <Image size="600" src="https://www.hidomin.com/news/photo/202105/453232_224470_4025.jpg" /> */}
         <div className="PostImgBox">
-          <Image size="590" src={imgUrl} />
+          <Image size="600" src={imgUrl} />
         </div>
         <div className="SnsButtons">
           <FavoriteRoundedIcon className="LikeButton" fontSize="5" onClick={myLike} />
@@ -106,7 +107,7 @@ const PostCard = (props) => {
           </div>
           <div className="DescriptionContent">{content}</div>
         </div>
-        <div className="CommentCnt" onClick={() => history.push('/main/postComment/:postid')}>
+        <div className="CommentCnt" onClick={() => history.push('/main/postComment')}>
           댓글 {commentCnt}개 모두 보기
         </div>
         <div className="CommentSection">
@@ -120,7 +121,7 @@ const PostCard = (props) => {
         <Grid is_flex>
           <SentimentSatisfiedOutlinedIcon className="SmileButton" fontSize="5" />
           <input className="CommentInputBox" placeholder="댓글 달기..." multiLine onChange={onChange} onSubmit={write}></input>
-          <button className="CommentAddButton" onClick={write}>
+          <button type="submit" className="CommentAddButton" onClick={write}>
             게시
           </button>
         </Grid>

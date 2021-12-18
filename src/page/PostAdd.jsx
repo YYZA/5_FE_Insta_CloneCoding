@@ -16,8 +16,8 @@ const PostAdd = (props) => {
   // const preview = useSelector((state) => state.imgFile.preview)
   const [imgFile, setImgFile] = React.useState(null)
   const fileInput = React.useRef()
-  const is_login = useSelector((state) => state.user.is_login)
-  const postlist = useSelector((state) => state.post.list)
+  const is_login = useSelector((state) => state.userlist.is_login)
+  const postlist = useSelector((state) => state.postlist.list)
   const { history } = props
 
   let postId = props.match.params.idx

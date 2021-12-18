@@ -25,18 +25,16 @@ const PostComment = (props) => {
   const postList = useSelector((state) => state.postlist.list)
   const commentList = useSelector((state) => state.commentlist.list)
   const postlist = props
-  console.log(commentList)
 
-  const imgUrl = postlist.imgUrl
-  const createdAt = postlist.createdAt
-  const content = postlist.content
-  const commentCnt = postlist.commentCnt
-  const likeCnt = postlist.likeCnt
-  const postId = postlist.postId
-  const nickname = postlist.nickname
-  console.log(createdAt)
-  const cmnickname = commentList.nickname
-  const cmcomment = commentList.comment
+  const imgUrl = postList.imgUrl
+  const createdAt = postList.createdAt
+  const content = postList.content
+  const likeCnt = postList.likeCnt
+  const postId = postList.postId
+  const nickname = postList.nickname
+  console.log(commentList)
+  const cmNickname = commentList.nickname
+  const cmComment = commentList.comment
   const cmCreatedAt = commentList.createdAt
 
   const day = moment(createdAt).fromNow()
@@ -121,12 +119,15 @@ const PostComment = (props) => {
             <div className="AllUserCommentList">
               <div className="PostCommentList">
                 <div className="UserComment">
-                  <UserNameTag />
+                  <Grid is_flex width="auto" _onClick={() => history.push('/profile')} cursor="pointer">
+                    <Image size="45" src={BasicProfile} />
+                    <Text fontWeight="bold">{cmNickname}</Text>
+                  </Grid>
                   <text className="UserCommentContent" margin="25px 10px 0 10px">
-                    is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글 is_댓글{' '}
+                    {cmComment}
                   </text>
                 </div>
-                <div className="CommnetCreatedAt">3시간 전</div>
+                <div className="CommnetCreatedAt">{cmCreatedAt}</div>
               </div>
             </div>
             <hr className="CommentContour" />
@@ -142,10 +143,10 @@ const PostComment = (props) => {
             <div className="FixedCommentSection">
               <Grid is_flex>
                 <SentimentSatisfiedOutlinedIcon className="DetailSmileButton" fontSize="5" />
-                <input className="DetailCommentInputBox" placeholder="댓글 달기..." multiLine value={content}>
+                <input className="DetailCommentInputBox" placeholder="댓글 달기..." multiLine onChange={onChange} onSubmit={write}>
                   {props.content}
                 </input>
-                <button className="DetailCommentAddButton" onClick={addComment}>
+                <button className="DetailCommentAddButton" onClick={write}>
                   게시
                 </button>
               </Grid>
