@@ -24,6 +24,10 @@
   cursor: pointer;
 }
 
+.PostImgBox {
+  border: 0.1px solid rgba(0, 0, 0, 0.1);
+}
+
 .MoreButton {
   margin: 0 1rem 0 0;
   font-size: 2rem;
@@ -69,7 +73,7 @@
 
 .BookMarkButton {
   font-size: 35px;
-  margin: 10px 0 0 375px;
+  margin: 10px 0 0 370px;
 }
 .BookMarkButton:hover {
   cursor: pointer;
@@ -95,7 +99,7 @@
 }
 
 .DescriptionContent {
-  margin: 0px 10px 10px 0;
+  margin: 5px 10px 10px 0;
   font-size: 15px;
 }
 /* 해당 유저의 이름과 포스트 내용 */
@@ -157,7 +161,7 @@
 .CommentInputBox {
   width: 30rem;
   height: auto;
-  margin: 0 10px 9px 0;
+  margin: 0 10px 9px 5px;
   overflow-wrap: normal;
   border: none;
   font-size: 15px;

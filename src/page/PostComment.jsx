@@ -6,6 +6,7 @@ import MenuModal from '../components/MenuModal'
 import { Grid, Image, Text, Spinner } from '../elements'
 import { history } from '../redux/configureStore'
 import { actionCreators as postActions } from '../redux/modules/post'
+import { actionCreators as commentActions } from '../redux/modules/comment'
 import SentimentSatisfiedOutlinedIcon from '@mui/icons-material/SentimentSatisfiedOutlined'
 import FavoriteRoundedIcon from '@mui/icons-material/FavoriteRounded'
 import MiniCommentButton from '../shared/icon/insta_comment.png'
@@ -18,8 +19,36 @@ import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined'
 import BasicProfile from '../shared/icon/originalLogo.png'
 
 const PostComment = (props) => {
+  const postList = useSelector((state) => state.postlist.list)
+  const postlist = props
+
+  const createdAt = postlist.createdAt
+  const imgUrl = postlist.imgUrl
+  const nickname = postlist.nickname
+  const content = postlist.content
+  const commentCnt = postlist.commentCnt
+  const postId = postlist.postId
+  console.log(imgUrl)
   const dispatch = useDispatch()
-  const [content, setContent] = React.useState()
+
+  const [getComment, setGetComment] = useState('')
+
+  React.useEffect(() => {
+    dispatch(commentActions.getCommentDB(postId))
+  }, [])
+
+  const onChange = (e) => {
+    setGetComment(e.target.value)
+  }
+
+  const write = () => {
+    const commentlist = {
+      comment: getComment,
+    }
+    dispatch(commentActions.addCommentDB(postId, commentlist))
+    setGetComment('')
+  }
+
   const [image, setImage] = React.useState()
 
   const [modalOpen, setModalOpen] = useState(false)

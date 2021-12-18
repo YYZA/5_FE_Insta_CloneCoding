@@ -209,14 +209,17 @@
 /* 910px 이하 작은 포스트카드 화면 */
 
 .PostImage {
+  margin: -1.5px 0 0 0;
   width: 40rem;
   height: 800px;
   display: flex;
   align-self: center;
   justify-self: center;
+  border: 0.5px solid rgba(0, 0, 0, 0.1);
 }
 @media (max-width: 1400px) {
   .PostImage {
+    margin: -1px 0 0 0;
     width: 30rem;
     height: 600px;
     display: flex;
@@ -235,11 +238,13 @@
 }
 @media (max-width: 910px) {
   .PostImage {
+    margin: 0 0 0 -0.06rem;
     width: 400px;
     height: 500px;
     display: flex;
     align-self: center;
     justify-self: center;
+    border: 0.5px solid rgba(0, 0, 0, 0.1);
   }
 }
 

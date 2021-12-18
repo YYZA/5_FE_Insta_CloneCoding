@@ -2,10 +2,11 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Image = (props) => {
-  const { shape, src, size, alt, width, height } = props
+  const { shape, src, size, alt, width, height, border } = props
   const styles = {
     src: src,
     size: size,
+    border: border,
   }
 
   if (shape === 'circle') {
@@ -51,7 +52,7 @@ const ImageCircle = styled.div`
   background-image: url('${(props) => props.src}');
   background-size: cover;
   /* 작업 완료 후 보더 none으로 변경 */
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   /* 작업 완료 후 보더 none으로 변경 */
   background-position: center;
   margin: 5px;

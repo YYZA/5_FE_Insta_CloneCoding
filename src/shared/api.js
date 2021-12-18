@@ -7,11 +7,12 @@ const api = axios.create({
   baseURL: 'http://13.125.149.78',
   headers: {
     'X-Requested-With': 'XMLHttpRequest',
-    'content-type': 'multipart/form-data; boundary=Uee--r1_eDOWu7FpA0LJdLwCMLJQapQGu',
+    'content-type': 'application/json;charset=UTF-8',
     'Access-Control-Allow-Origin': '*',
     accept: 'application/json',
     Authorization: cookie,
   },
+  // withCredentials: true,
 })
 
 // api.interceptors.request.use((config) => {

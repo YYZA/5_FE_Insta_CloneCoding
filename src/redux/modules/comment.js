@@ -70,7 +70,6 @@ const addCommentDB = (postId, comment) => {
     await apis
       .addComment(postId, comment)
       .then((response) => {
-        console.log(response.data.comment)
         dispatch(addComment(postId, response.data.comment))
       })
       .catch((error) => {

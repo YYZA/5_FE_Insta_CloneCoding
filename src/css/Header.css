@@ -22,7 +22,7 @@
   height: 45px;
   margin-right: 20px;
   /* 레이아웃 작업 후 삭제 */
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 @media (max-width: 1300px) {
   .HeaderSection {

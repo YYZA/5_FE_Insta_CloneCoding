@@ -14,12 +14,12 @@ const Siginin = (props) => {
 
   const onSubmit = async (data) => {
     await axios
-      .post("http://13.125.149.78/api/userlist/login", {
+      .post('http://13.125.149.78/api/userlist/login', {
         userId: data.email,
         password: data.password,
       })
       .then((res) => {
-        document.cookie = "authCookie" + "=" + res.data.token;
+        document.cookie = 'authCookie' + '=' + res.data.token
         dispatch(
           userActions.setUser({
             username: data.email,

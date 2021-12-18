@@ -20,9 +20,9 @@ const persistConfig = {
 }
 
 const rootReducer = combineReducers({
-  post: post,
-  user: user,
-  comment: comment,
+  postlist: post,
+  userlist: user,
+  commentlist: comment,
   router: connectRouter(history),
 })
 
