@@ -80,7 +80,7 @@ Insta-clone
 📱 API
 -----------------
 
-<link src="https://www.notion.so/API-0a1dc1f0526142bf9a44b51ad0c99923"/>
+https://www.notion.so/API-0a1dc1f0526142bf9a44b51ad0c99923
 
 🛠 Trouble Shooting
 -----------------  
