@@ -13,7 +13,6 @@ const Footer = (props) => {
   const nickname = postList.nickname
   const userId = postList.userId
 
-  var win = window.open('/') // 새탭에서 열림
   console.log(postList)
   const members = [
     {

@@ -32,22 +32,8 @@ const Main = (props) => {
           </div>
           <div className="MainPostLayout">
             <PostList />
-            {/* {post_list &&
-              post_list.map((p, idx) => {
-                return (
-                  <Grid key={idx} margin="0px">
-                    <PostCard {...p} />
-                  </Grid>
-                )
-              })} */}
-            {/* <PostCard></PostCard>
-            <PostCard></PostCard>
-            <PostCard></PostCard>
-            <PostCard></PostCard>
-            <PostCard></PostCard> */}
           </div>
         </div>
-        {/* {is_loading ? <Spinner /> : null} */}
       </div>
     </>
   )

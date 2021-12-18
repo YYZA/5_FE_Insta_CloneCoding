@@ -9,7 +9,6 @@ const UserNameTag = (props) => {
   const nickname = useSelector((state) => state.postlist.nickname)
   const postlist = props
 
-  console.log(postlist.nickname)
   return (
     <>
       <Grid is_flex width="auto" _onClick={() => history.push('/profile')} cursor="pointer">
