@@ -64,7 +64,15 @@ const UserProfile = (props) => {
           <Container>
             <Circle src="https://t1.daumcdn.net/cfile/tistory/2513B53E55DB206927"></Circle>
             <Text weight="600" size="24px">
-              {preview.img === undefined ? <>Admin</> : preview.img[0].nickname}
+              {preview.img.nickname === undefined ? (
+                <>Admin</>
+              ) : (
+                preview.img[0].nickname
+              )}
+            </Text>
+            <hr style={{ width: "90%" }} />
+            <Text weight="600" size="24px">
+              PREVIWE
             </Text>
             <div
               style={{
